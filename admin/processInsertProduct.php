@@ -38,7 +38,7 @@ if (isset($_POST["submitInsert"])) {
             $description = trim($_POST["description"]);
         }
         // image upload handling
-        $targetDirectory = "../images/product-images/";
+        $targetDirectory = "../assets/images/product-images/";
         $photoToUpload = basename($_FILES["photoToUpload"]["name"]);
         $targetFile = $targetDirectory . $photoToUpload;
         $imageFileType = pathinfo($targetFile, PATHINFO_EXTENSION);

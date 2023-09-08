@@ -38,7 +38,7 @@
 				?>
 					<div class="shoppingCart__row">
 						<div class="shopppingCart__row_image">
-							<img src="./images/product-images/<?= $productPhoto ?>" alt="">
+							<img src="./assets/images/product-images/<?= $productPhoto ?>" alt="">
 						</div>
 						<div class="shoppingCart__row_info">
 							<div class="shoppingCart__row_itemDetails">
@@ -132,10 +132,10 @@
 		</div>
 		<div class="products">
 			<?php foreach ($rows as $row) :
-				if (file_exists("images/product-images/" . $row["photo"]) && strlen($row["photo"]) > 0) {
-					$photoPath = "images/product-images/" . $row["photo"];
+				if (file_exists("./assets/images/product-images/" . $row["photo"]) && strlen($row["photo"]) > 0) {
+					$photoPath = "./assets/images/product-images/" . $row["photo"];
 				} else {
-					$photoPath = "images/product-images/imageUnavailable.jpg";
+					$photoPath = "./assets/images/product-images/imageUnavailable.jpg";
 				}
 				$itemId = $row["itemId"];
 				$itemName = $row["itemName"];

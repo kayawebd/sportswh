@@ -29,7 +29,7 @@
         <div id="slideshow" class="slideshow">
             <div class="slideshow_slides fade">
                 <div class="heroContainer">
-                    <div class="imageWrap"><img src="./images/slide-show/slideshow-ball2.webp" alt="slide show ball" aria-hidden="true"></div>
+                    <div class="imageWrap"><img src="./assets/images/slide-show/slideshow-ball2.webp" alt="slide show ball" aria-hidden="true"></div>
                     <div class="heroTextWrap">
                         <div class="heroText">
                             <h2 class="sr-only">New range of Sports balls</h2>
@@ -42,7 +42,7 @@
             </div>
             <div class="slideshow_slides fade">
                 <div class="heroContainer">
-                    <div class="imageWrap"><img src="./images/slide-show/slideshow-helmet3.webp" alt="protective helmets" aria-hidden="true"></div>
+                    <div class="imageWrap"><img src="./assets/images/slide-show/slideshow-helmet3.webp" alt="protective helmets" aria-hidden="true"></div>
                     <div class="heroTextWrap">
                         <div class="heroText">
                             <h2 class="sr-only">new range of protective helmets</h2>
@@ -54,7 +54,7 @@
             </div>
             <div class="slideshow_slides fade">
                 <div class="heroContainer">
-                    <div class="imageWrap"><img src="./images/slide-show/slideshow-runner2.webp" alt="Race training gear" aria-hidden="true"></div>
+                    <div class="imageWrap"><img src="./assets/images/slide-show/slideshow-runner2.webp" alt="Race training gear" aria-hidden="true"></div>
                     <div class="heroTextWrap">
                         <div class="heroText">
                             <h2 class="sr-only">Race training gear</h2>
@@ -81,7 +81,7 @@
                 <div class="row">
                     <div class="column2">
                         <div class="imgWrapper">
-                            <a href="./productsByCategory.php?id=6"><img src="./images/featured-offer/john-arano-h4i9G-de7Po-unsplash.webp" alt="featured offer"></a>
+                            <a href="./productsByCategory.php?id=6"><img src="./assets/images/featured-offer/john-arano-h4i9G-de7Po-unsplash.webp" alt="featured offer"></a>
                         </div><a href="./productsByCategory.php?id=6">
                             <div class="content">
                                 <div class="content-heading">up to 50% off equipment</div>
@@ -94,7 +94,7 @@
                     </div>
                     <div class="column2">
                         <div class="imgWrapper">
-                            <a href="./productsByCategory.php?id=7"><img src="./images/featured-offer/maarten-duineveld-pmfJcN7RGiw-unsplash.webp" alt="pants"></a>
+                            <a href="./productsByCategory.php?id=7"><img src="./assets/images/featured-offer/maarten-duineveld-pmfJcN7RGiw-unsplash.webp" alt="pants"></a>
                         </div><a href="./productsByCategory.php?id=7">
                             <div class="content">
                                 <div class="content-heading">20 - 40% off training gear</div>
@@ -146,10 +146,10 @@
                 </div>
                 <div class="products">
                     <?php foreach ($rows as $row) :
-                        if (file_exists("images/product-images/" . $row["photo"]) && strlen($row["photo"]) > 0) {
-                            $photoPath = "images/product-images/" . $row["photo"];
+                        if (file_exists("./assets/images/product-images/" . $row["photo"]) && strlen($row["photo"]) > 0) {
+                            $photoPath = "./assets/images/product-images/" . $row["photo"];
                         } else {
-                            $photoPath = "images/product-images/imageUnavailable.jpg";
+                            $photoPath = "./assets/images/product-images/imageUnavailable.jpg";
                         }
                         $itemId = $row["itemId"];
                         $itemName = $row["itemName"];
@@ -207,7 +207,7 @@
                 <div class="row">
                     <div class="column3">
                         <div class="imgWrapper">
-                            <a href="#"><img src="./images/product-images/nike-dunk-low-younger-kids-shoes-white.webp" alt="nike kids shoes white"></a>
+                            <a href="#"><img src="./assets/images/product-images/nike-dunk-low-younger-kids-shoes-white.webp" alt="nike kids shoes white"></a>
                         </div>
                         <div class="content">
                             <div class="content-heading">New Nike Dunk</div>
@@ -219,7 +219,7 @@
                     </div>
                     <div class="column3">
                         <div class="imgWrapper">
-                            <a href="#"><img src="./images/product-images/32958641012766.jpg" alt="pants"></a>
+                            <a href="#"><img src="./assets/images/product-images/32958641012766.jpg" alt="pants"></a>
                         </div>
                         <div class="content">
                             <div class="content-heading">Fitness Bands</div>
@@ -231,7 +231,7 @@
                     </div>
                     <div class="column3">
                         <div class="imgWrapper">
-                            <a href="#"><img src="./images/product-images/34332258762782.jpg" alt="pants"></a>
+                            <a href="#"><img src="./assets/images/product-images/34332258762782.jpg" alt="pants"></a>
                         </div>
                         <div class="content">
                             <div class="content-heading">Cricket Set</div>
@@ -253,7 +253,7 @@
                 <div class="row">
                     <a href="./productsByCategory.php?id=1" class="column4">
                         <div class="imgWrapper">
-                            <img src="./images/productByCategory/shoes.webp" alt="category shoes">
+                            <img src="./assets/images/productByCategory/shoes.webp" alt="category shoes">
                         </div>
                         <div class="content">
                             <span class="title">Shoes</span>
@@ -261,7 +261,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=2" class="column4">
                         <div class="imgWrapper">
-                            <img src="./images/productByCategory/helmet.webp" alt="category helmet">
+                            <img src="./assets/images/productByCategory/helmet.webp" alt="category helmet">
                         </div>
                         <div class="content">
                             <span class="title">Helmet</span>
@@ -269,7 +269,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=33" class="column4">
                         <div class="imgWrapper">
-                            <img src="./images/productByCategory/pants.webp" alt="category pants">
+                            <img src="./assets/images/productByCategory/pants.webp" alt="category pants">
                         </div>
                         <div class="content">
                             <span class="title">Pants</span>
@@ -277,7 +277,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=4" class="column4">
                         <div class="imgWrapper">
-                            <img src="./images/productByCategory/tops.webp" alt="category tops">
+                            <img src="./assets/images/productByCategory/tops.webp" alt="category tops">
                         </div>
                         <div class="content">
                             <span class="title">Tops</span>
@@ -285,7 +285,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=5" class="column4">
                         <div class="imgWrapper">
-                            <img src="./images/productByCategory/balls3.webp" alt="category balls">
+                            <img src="./assets/images/productByCategory/balls3.webp" alt="category balls">
                         </div>
                         <div class="content">
                             <span class="title">Balls</span>
@@ -293,7 +293,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=6" class="column4">
                         <div class="imgWrapper">
-                            <img src="./images/productByCategory/equipment.webp" alt="category equipment">
+                            <img src="./assets/images/productByCategory/equipment.webp" alt="category equipment">
                         </div>
                         <div class="content">
                             <span class="title">Equipment</span>
@@ -301,7 +301,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=7" class="column4">
                         <div class="imgWrapper">
-                            <img src="./images/productByCategory/trainingGear.webp" alt="">
+                            <img src="./assets/images/productByCategory/trainingGear.webp" alt="">
                         </div>
                         <div class="content">
                             <span class="title">Training Gear</span>
@@ -309,7 +309,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=171" class="column4">
                         <div class="imgWrapper">
-                            <img src="./images/productByCategory/tech.webp" alt="category tech">
+                            <img src="./assets/images/productByCategory/tech.webp" alt="category tech">
                         </div>
                         <div class="content">
                             <span class="title">Tech</span>
@@ -336,10 +336,10 @@
                 </div>
                 <div class="products">
                     <?php foreach ($rows as $row) :
-                        if (file_exists("images/product-images/" . $row["photo"]) && strlen($row["photo"]) > 0) {
-                            $photoPath = "images/product-images/" . $row["photo"];
+                        if (file_exists("./assets/images/product-images/" . $row["photo"]) && strlen($row["photo"]) > 0) {
+                            $photoPath = "./assets/images/product-images/" . $row["photo"];
                         } else {
-                            $photoPath = "images/product-images/imageUnavailable.jpg";
+                            $photoPath = "./assets/images/product-images/imageUnavailable.jpg";
                         }
                         $itemId = $row["itemId"];
                         $itemName = $row["itemName"];
@@ -382,22 +382,22 @@
             <div class="partners">
                 <ul class="partners__logos">
                     <li class="logo">
-                        <a href="https://www.nike.com/au/"><img src="./images/partner-logo/addidas.png" class="partners__logo-image" width="80" height="28" alt="nike logo" aria-hidden="true"></a>
+                        <a href="https://www.nike.com/au/"><img src="./assets/images/partner-logo/addidas.png" class="partners__logo-image" width="80" height="28" alt="nike logo" aria-hidden="true"></a>
                     </li>
                     <li class="logo">
-                        <a href="#"><img src="./images/partner-logo/puma.png" class="partners__logo-image" width="80" height="53" alt="adidas logo" aria-hidden="true"></a>
+                        <a href="#"><img src="./assets/images/partner-logo/puma.png" class="partners__logo-image" width="80" height="53" alt="adidas logo" aria-hidden="true"></a>
                     </li>
                     <li class="logo">
-                        <a href="#"> <img src="./images/partner-logo/nike.png" class="partners__logo-image" width="80" height="19" alt="skins logo" aria-hidden="true"></a>
+                        <a href="#"> <img src="./assets/images/partner-logo/nike.png" class="partners__logo-image" width="80" height="19" alt="skins logo" aria-hidden="true"></a>
                     </li>
                     <li class="logo">
-                        <a href="#"> <img src="./images/partner-logo/reebok.png" class="partners__logo-image" width="80" height="26" alt="asics logo" aria-hidden="true"></a>
+                        <a href="#"> <img src="./assets/images/partner-logo/reebok.png" class="partners__logo-image" width="80" height="26" alt="asics logo" aria-hidden="true"></a>
                     </li>
                     <li class="logo">
-                        <a href="#"> <img src="./images/partner-logo/asics.png" class="partners__logo-image" width="80" height="43" alt="newbalance logo" aria-hidden="true"></a>
+                        <a href="#"> <img src="./assets/images/partner-logo/asics.png" class="partners__logo-image" width="80" height="43" alt="newbalance logo" aria-hidden="true"></a>
                     </li>
                     <li class="logo">
-                        <a href="#"><img src="./images/partner-logo/under_armour.png" class="partners__logo-image" width="80" height="19" alt="wilson logo" aria-hidden="true"></a>
+                        <a href="#"><img src="./assets/images/partner-logo/under_armour.png" class="partners__logo-image" width="80" height="19" alt="wilson logo" aria-hidden="true"></a>
                     </li>
                 </ul>
             </div>

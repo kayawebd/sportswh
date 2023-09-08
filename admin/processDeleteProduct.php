@@ -20,8 +20,8 @@ if (!empty($_GET["id"])) {
     $stmt->bindValue(":itemId", $_GET["id"]);
     $photoToDelete = $db->executeSQLReturnOneValue($stmt);
     $imagePlaceholder = "imageUnavailable.webp";
-    $imageBinDirectory = "../images/imageBin/";
-    $targetDirectory = "../images/product-images/";
+    $imageBinDirectory = "../assets/images/imageBin/";
+    $targetDirectory = "../assets/images/product-images/";
     // delete old photo
     if (!empty($photoToDelete)) {
         //delete the file using unlink  

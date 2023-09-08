@@ -14,7 +14,7 @@
 
         <div class="videoSticky">
             <div class="videoWrapper">
-                <video src="./images/video/surfing.mp4" autoplay loop playsinline aria-hidden="true"></video>
+                <video src="./assets/images/video/surfing.mp4" autoplay loop playsinline aria-hidden="true"></video>
             </div>
         </div>
         <div class="blogs">
@@ -28,7 +28,7 @@
                 <div class="container blog">
                     <div class="flexItem1">
                         <div class="imgContainer">
-                            <a href="#"><img src="./images/slide-show/runner16x9.webp" alt="runner get ready to run"></a>
+                            <a href="#"><img src="./assets/images/slide-show/runner16x9.webp" alt="runner get ready to run"></a>
                         </div>
                     </div>
                     <div class="flexItem2">
@@ -48,7 +48,7 @@
                 <div class="container blog">
                     <div class="flexItem1">
                         <div class="imgContainer">
-                            <a href="#"><img src="./images/slide-show/quad_bikes16x9.webp" alt="quak bikes on dirt road"></a>
+                            <a href="#"><img src="./assets/images/slide-show/quad_bikes16x9.webp" alt="quak bikes on dirt road"></a>
                         </div>
                     </div>
                     <div class="flexItem2">
@@ -67,7 +67,7 @@
                 <div class="container blog">
                     <div class="flexItem1">
                         <div class="imgContainer">
-                            <a href="#"><img src="./images/slide-show/skater16x9.webp" alt="man playing skateboard"></a>
+                            <a href="#"><img src="./assets/images/slide-show/skater16x9.webp" alt="man playing skateboard"></a>
                         </div>
                     </div>
                     <div class="flexItem2">
@@ -95,7 +95,7 @@
                     <div class="container article">
                         <div class="flexItem1">
                             <div class="imgContainer">
-                                <a href="#"><img src="./images/articles-img/usama-akram-kP6knT7tjn4-unsplash.webp" alt="nike shoes"></a>
+                                <a href="#"><img src="./assets/images/articles-img/usama-akram-kP6knT7tjn4-unsplash.webp" alt="nike shoes"></a>
                             </div>
                         </div>
                         <div class="flexItem2">
@@ -114,7 +114,7 @@
                     <div class="container article">
                         <div class="flexItem1">
                             <div class="imgContainer">
-                                <a href="#"><img src="./images/articles-img/jacek-dylag-fZglO1JkwoM-unsplash.webp" alt="man playing skateboard"></a>
+                                <a href="#"><img src="./assets/images/articles-img/jacek-dylag-fZglO1JkwoM-unsplash.webp" alt="man playing skateboard"></a>
                             </div>
                         </div>
                         <div class="flexItem2">
@@ -133,7 +133,7 @@
                     <div class="container article">
                         <div class="flexItem1">
                             <div class="imgContainer">
-                                <a href="#"><img src="./images/articles-img/yaron-richman-uZmr0wwfHNA-unsplash.webp" alt="man playing skateboard"></a>
+                                <a href="#"><img src="./assets/images/articles-img/yaron-richman-uZmr0wwfHNA-unsplash.webp" alt="man playing skateboard"></a>
                             </div>
                         </div>
                         <div class="flexItem2">

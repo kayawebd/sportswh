@@ -25,7 +25,7 @@
         })();
     </script> -->
     <!--End of Tawk.to Script-->
-    <link rel="icon" href="./images/company-logo/favicon.png" type="image/x-icon">
+    <link rel="icon" href="./assets/images/company-logo/favicon.png" type="image/x-icon">
 </head>
 
 <body>

@@ -41,8 +41,8 @@ if (isset($_POST["submitUpdate"])) {
         $oldPhoto = basename($_POST["oldPhoto"]);
         $photoToUpload = basename($_FILES["photoToUpload"]["name"]);
         $photoTmpName  = $_FILES["photoToUpload"]["tmp_name"];
-        $targetDirectory = "../images/product-images/";
-        $archiveDirectory = "../images/archiveImages/";
+        $targetDirectory = "../assets/images/product-images/";
+        $archiveDirectory = "../assets/images/archiveImages/";
         $targetFile = $targetDirectory . $photoToUpload;
         $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
         $imagePlaceholder = "imageUnavailable.webp";

@@ -19,9 +19,9 @@ if (!empty($_GET["id"])) {
     $imagePlaceholder = "imageUnavailable.webp";
 
     if (!empty($photoToMove) && $photoToMove != $imagePlaceholder) {
-        $targetDirectory = "../images/product-images/";
+        $targetDirectory = "../assets/images/product-images/";
         $sourceFile = $targetDirectory . $photoToMove;
-        $destinationDirectory = "../images/imageBin/";
+        $destinationDirectory = "../assets/images/imageBin/";
 
         // Generate a new unique filename in case there's a file with the same name in the destination directory
         $path_parts = pathinfo($photoToMove);

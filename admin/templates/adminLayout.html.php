@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./styles/adminStyle.css">
     <script defer src="../scripts/script.js"></script>
     <script defer src="./scripts/adminScript.js"></script>
-    <link rel="icon" href="../images/company-logo/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../assets/images/company-logo/favicon.png" type="image/x-icon">
 
 <body>
 

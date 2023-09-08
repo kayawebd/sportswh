@@ -2,10 +2,10 @@
     <div class="productsContainer">
         <div class="products siteWrapper">
             <?php foreach ($productRows as $productRow) :
-                if (file_exists("images/product-images/" . $productRow["photo"]) && strlen($productRow["photo"]) > 0) {
-                    $photoPath = "images/product-images/" . $productRow["photo"];
+                if (file_exists("./assets/images/product-images/" . $productRow["photo"]) && strlen($productRow["photo"]) > 0) {
+                    $photoPath = "./assets/images/product-images/" . $productRow["photo"];
                 } else {
-                    $photoPath = "images/product-images/imageUnavailable.jpg";
+                    $photoPath = "./assets/images/product-images/imageUnavailable.jpg";
                 }
                 $itemId = $productRow["itemId"];
                 $itemName = $productRow["itemName"];

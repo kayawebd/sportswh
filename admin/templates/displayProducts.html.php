@@ -50,7 +50,7 @@
                 <tr>
                     <td><?= $itemId ?></td>
                     <td><?= $itemName ?></td>
-                    <td><img src="../images/product-images/<?= $photo ?>" alt="<?= $photo ?> image" class="itemImage"></td>
+                    <td><img src="../assets/images/product-images/<?= $photo ?>" alt="<?= $photo ?> image" class="itemImage"></td>
                     <td><?= $price ?></td>
                     <td><?= $salePrice ?></td>
                     <td><?php

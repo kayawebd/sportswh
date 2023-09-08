@@ -50,7 +50,7 @@ if (count($editRows) > 0) {
 
             ?>
             <p>
-                <img src="../images/product-images/<?= $displayPhoto ?>" alt=" <?= $editRow["itemName"] ?> photo" onload="handleImageLoad(this)" id="currentPhoto" />
+                <img src="../assets/images/product-images/<?= $displayPhoto ?>" alt=" <?= $editRow["itemName"] ?> photo" onload="handleImageLoad(this)" id="currentPhoto" />
             <p for="photo">Current Photo: <?= $editRow["photo"] ?></p><span id="sizeInfo"></span>
             <a href="deletePhoto.php?id=<?= $editRow["itemId"] ?>" class="delete deleteButton">Delete Image</a>
             <input type="hidden" name="oldPhoto" value="<?= $editRow["photo"] ?> ">
