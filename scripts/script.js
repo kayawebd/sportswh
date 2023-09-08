@@ -443,7 +443,10 @@ if (document.getElementById("aboutPage")) {
 
 // CAHNGE HEADER BACKGROUND COLOR ON ABOUT PAGE
 // Check if the current page is the contact page (you can use your own logic)
-if (window.location.pathname === "/_websites/sportswh_V2/about.php") {
+const FULL_PATH = window.location.pathname;
+const SPLITED_PATH = FULL_PATH.split("/");
+const PATH_NAME = SPLITED_PATH[SPLITED_PATH.length - 1];
+if (PATH_NAME === "about.php") {
   // Get the siteHeader element
   const SITE_HEADER = document.getElementById("siteHeader");
   const CATEGORY_NAV = document.querySelector(".categoryNav");
