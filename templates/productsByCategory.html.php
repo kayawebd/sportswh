@@ -1,11 +1,24 @@
+<?php
+$sql = "SELECT itemId, itemName, photo, price, salePrice, description, category.categoryName FROM item JOIN category ON item.categoryId = category.categoryId WHERE category.categoryId = :id";
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(":id", $_GET["id"]);
+$productRows = $db->executeSQL($stmt);
+$categoryName = $productRows[0]["categoryName"];
+?>
 <div class="mainContents">
+    <div class="breadcrumb siteWrapper">
+        <a class="breadcrumb-element" href="./index.php">Home</a>
+        <a class="breadcrumb-element" href="./products.php">Products</a>
+        <a class="breadcrumb-element" href="./productsByCategory.php?id=<?= $categoryId ?>"><?= $categoryName ?></a>
+    </div>
+    <h1 class="categoryHeading"><?= $categoryName ?></h1>
     <div class="productsContainer">
         <div class="products siteWrapper">
             <?php foreach ($productRows as $productRow) :
-                if (file_exists("images/product-images/" . $productRow["photo"]) && strlen($productRow["photo"]) > 0) {
-                    $photoPath = "images/product-images/" . $productRow["photo"];
+                if (file_exists("./assets/images/product-images/" . $productRow["photo"]) && strlen($productRow["photo"]) > 0) {
+                    $photoPath = "./assets/images/product-images/" . $productRow["photo"];
                 } else {
-                    $photoPath = "images/product-images/imageUnavailable.jpg";
+                    $photoPath = "./assets/images/product-images/imageUnavailable.webp";
                 }
                 $itemId = $productRow["itemId"];
                 $itemName = $productRow["itemName"];
@@ -13,6 +26,7 @@
                 $price = $productRow["price"];
                 $description = $productRow["description"];
                 $salePrice = $productRow["salePrice"];
+                $categoryName = $productRow["categoryName"];
             ?>
                 <article class="item">
                     <a href="./productDetails.php?id=<?= $itemId ?>" class="link">

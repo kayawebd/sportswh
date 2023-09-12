@@ -12,12 +12,6 @@ $pdo = $db->connect();
 
 $title = "Products by category";
 
-// retrieve products
-$sql = "SELECT itemId, itemName, photo, price, salePrice, description FROM item WHERE categoryId = :id;";
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(":id", $_GET["id"]);
-$productRows = $db->executeSQL($stmt);
-
 ob_start();
 include "./templates/productsByCategory.html.php";
 $output = ob_get_clean();

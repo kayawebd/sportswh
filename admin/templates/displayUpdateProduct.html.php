@@ -22,7 +22,7 @@ if (isset($_GET["id"])) {
     $itemID = 0;
 }
 
-$sql = "SELECT itemId, itemName, photo, price, salePrice, description, featured, category.categoryId FROM item, category WHERE item.categoryId = category.categoryId  AND itemId = :itemID;";
+$sql = "SELECT itemId, itemName, photo, price, salePrice, description, featured, item.productCode, category.categoryId FROM item, category WHERE item.categoryId = category.categoryId  AND itemId = :itemID";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(":itemID", $itemID, PDO::PARAM_INT);
 $editRows = $db->executeSQL($stmt);
@@ -44,23 +44,35 @@ if (count($editRows) > 0) {
                 <label for="itemName">Item Name:</label>
                 <input type="text" name="itemName" id="itemName" value="<?= $editRow["itemName"] ?>" required>
             </p>
+            <p>
+                <img src="../assets/images/product-images/<?= $editRow["photo"] ?>" alt=" <?= $editRow["itemName"] ?> photo" id="currentPhoto" />
+            <p for="photo">File Name: <?= $editRow["photo"] ?></p>
             <?php
+            $filePath = "../assets/images/product-images/" . $editRow["photo"];
+            $fileSize = filesize($filePath);
+            $fileSizeFormatted = formatBytes($fileSize);
+            function formatBytes($bytes, $precision = 0)
+            {
+                $units = ['B', 'KB', 'MB', 'GB', 'TB'];
 
-            $displayPhoto = $editRow["photo"];
+                $bytes = max($bytes, 0);
+                $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+                $pow = min($pow, count($units) - 1);
+
+                return round($bytes / (pow(1024, $pow)), $precision) . ' ' . $units[$pow];
+            }
 
             ?>
-            <p>
-                <img src="../images/product-images/<?= $displayPhoto ?>" alt=" <?= $editRow["itemName"] ?> photo" onload="handleImageLoad(this)" id="currentPhoto" />
-            <p for="photo">Current Photo: <?= $editRow["photo"] ?></p><span id="sizeInfo"></span>
-            <a href="deletePhoto.php?id=<?= $editRow["itemId"] ?>" class="delete deleteButton">Delete Image</a>
+            <p id="sizeInfo">File Size: <?= $fileSizeFormatted ?></p>
+            <p id="sizeInfo">File Location: <?= $filePath ?></p>
             <input type="hidden" name="oldPhoto" value="<?= $editRow["photo"] ?> ">
             </p>
-            <p>
-                <label for="newPhoto">New Photo:</label>
-                <img id="newPhoto" />
-                <input type="file" name="photoToUpload" id="photo" onchange="handleFileSelect(event)">
+
+            <label for="photoToUpload">Upload Photo:</label>
+            <img id="photoToUpload" />
+            <input type="file" name="photoToUpload" id="photo" onchange="handleFileSelect(event)">
+            <p id="fileExistMessage" class="error"></p>
             <p id="fileSize"></p>
-            </p>
             <p>
                 <label for="price">Price:</label>
                 <input type="number" name="price" id="price" value="<?= $editRow["price"] ?>" required>
@@ -81,9 +93,8 @@ if (count($editRows) > 0) {
                 ?>
                     <input type="checkbox" name="featured" checked>
                 <?php else : ?>
-                    <input type="checkbox" name="featured"> <span>Yes</span>
+                    <input type="checkbox" name="featured">
                 <?php endif; ?>
-                <span>&nbsp;Feature on the main page</span>
             <p>
                 <label for="category">Category:</label>
                 <select name="categoryId" id="category" required>
@@ -100,9 +111,13 @@ if (count($editRows) > 0) {
                     <?php endforeach; ?>
                 </select>
             </p>
+            <p>
+                <label for="productCode">Product Code:</label>
+                <input type="text" name="productCode" id="productCode" value="<?= $editRow["productCode"] ?>">
+            </p>
             <div class="formAction">
                 <input type="hidden" value="<?= $editRow["itemId"] ?>" name="itemId">
-                <input type="submit" name="submitUpdate" value="Update">
+                <input type="submit" name="submitUpdateProduct" value="Update">
                 <a href="displayProducts.php" class="formAction-back">Back</a>
             </div>
         </form>

@@ -1,45 +1,51 @@
 <div>
     <p class="adminMessage"><?= $message ?></p>
-    <h1>Dashboard</h1>
+    <h1 class="sr-only">Dashboard</h1>
     <div class="dashboard">
-        <div class="numberOfCategories">
-            <h2>Categories</h2>
+
+        <div class="totalSales">
+            <h2 class="heading">Total Sales</h2>
             <?php
-            $sql = "SELECT * FROM category";
+            $sql = "SELECT SUM(price) AS totalSales FROM orderitem;";
             $stmt = $pdo->prepare($sql);
-            $rows = $db->executeSQL($stmt);
-            $numberOfCategories = count($rows);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($result !== false) {
+                $totalSales = number_format($result['totalSales'], 0);
+            } else {
+                $totalSales = "No sales data available.";
+            }
             ?>
-            <p><?= $numberOfCategories ?></p>
+            <p class="result">$ <?= $totalSales ?></p>
         </div>
-        <div class="numberOfUser">
-            <h2>Users</h2>
-            <?php
-            $sql = "SELECT * FROM user";
-            $stmt = $pdo->prepare($sql);
-            $rows = $db->executeSQL($stmt);
-            $numberOfUser = count($rows);
-            ?>
-            <p><?= $numberOfUser ?></p>
-        </div>
+
         <div class="numberOfProducts">
-            <h2>Products</h2>
+            <h2 class="heading">Profits</h2>
             <?php
-            $sql = "SELECT * FROM item";
-            $stmt = $pdo->prepare($sql);
-            $rows = $db->executeSQL($stmt);
-            $numberOfProducts = count($rows);
+            $profit = number_format($totalSales * 0.3, 0);
             ?>
-            <p><?= $numberOfProducts ?></p>
+            <p class="result">$ <?= $profit ?></p>
         </div>
+
         <div class="numberOfOrders">
-            <h2>Orders</h2>
+            <h2 class="heading">Number Of Orders</h2>
             <?php
             $sql = "SELECT * FROM orderitem";
             $stmt = $pdo->prepare($sql);
             $rows = $db->executeSQL($stmt);
             $numberOfOrders = count($rows);
             ?>
-            <p> <?= $numberOfOrders ?></p>
+            <p class="result"><?= $numberOfOrders ?></p>
+        </div>
+
+        <div class="numberOfProducts">
+            <h2 class="heading">Number Of Products</h2>
+            <?php
+            $sql = "SELECT * FROM item";
+            $stmt = $pdo->prepare($sql);
+            $rows = $db->executeSQL($stmt);
+            $numberOfProducts = count($rows);
+            ?>
+            <p class="result"> <?= $numberOfProducts ?></p>
         </div>
     </div>

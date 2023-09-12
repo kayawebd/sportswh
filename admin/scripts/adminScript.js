@@ -64,9 +64,7 @@ switchInput.addEventListener("input", function () {
   }
 });
 
-/* DELETE COMFIRMATION PROMPT
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-// add onclick="return confirmDelete(event) in the link to show prompt
+/* DELETE COMFIRMATION PROMPT */
 function confirmDelete(event) {
   console.log("confirmDelete function executed");
   if (!confirm("Are you sure want to delete?")) {
@@ -74,4 +72,15 @@ function confirmDelete(event) {
     return false;
   }
   return true;
+}
+
+/*  DISPLAY PHOTO SIZE TO BE UPLOADED */
+function handleFileSelect(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const fileSize = (file.size / 1024).toFixed(0) + " KB";
+    document.getElementById("fileSize").textContent = "File Size: " + fileSize;
+    document.getElementById("photoToUpload").src =
+      window.URL.createObjectURL(file);
+  }
 }

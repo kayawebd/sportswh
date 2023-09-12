@@ -176,31 +176,6 @@ body {
 
 /* PAGE CONTENT STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.adminSection {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    border-radius: 5px;
-    background-color: white;
-    padding: 10px;
-}
-
-.adminSection .myaccountInfo {
-    margin: 0;
-}
-
-.adminSection .cardStyle {
-    margin: 0;
-    max-width: 360px;
-    padding: 15px;
-}
-
-.adminSection h2,
-.adminSection h3,
-.adminSection h1 {
-    margin-bottom: 15px;
-}
-
 .page-content {
     position: relative;
     left: var(--page-header-width);
@@ -311,7 +286,81 @@ input[type="search"]::-ms-clear {
     box-shadow: var(--box-shadow);
 }
 
+/* DASHBOARD 
+-------------------------------------------*/
+.adminSection {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--page-header-txtColor);
+}
 
+
+.adminSection .myaccountInfo {
+    margin: 0;
+}
+
+.adminSection .cardStyle {
+    margin: 0;
+    max-width: 360px;
+    padding: 15px;
+}
+
+.adminSection .dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.adminSection .dashboard .heading {
+    font-style: normal;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+}
+
+.adminSection .dashboard>* {
+    background-color: var(--page-header-bgColor);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.adminSection .dashboard>* .result {
+    font-weight: 800;
+    font-size: 3rem;
+    font-style: normal;
+    line-height: 2.3em;
+    letter-spacing: -0.05em;
+    white-space: nowrap;
+}
+
+@media (min-width: 600px) {
+    .adminSection .dashboard {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .adminSection .dashboard>* {
+        flex: 0 0 calc(50% - .5rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .adminSection .dashboard {
+        justify-content: center;
+    }
+
+    .adminSection .dashboard>* {
+        flex: 0 0 calc(24% - .5rem);
+
+    }
+}
 
 
 /* MQ RULES
@@ -514,11 +563,11 @@ input[type="search"]::-ms-clear {
 /* LIGHT MODE STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .light-mode {
-    --page-header-bgColor: #cfcfcf;
+    --page-header-bgColor: #f3f3f3;
     --page-header-bgColor-hover: #b9e4e0;
     --page-header-txtColor: #2c303a;
     --page-header-headingColor: #979595;
-    --page-content-bgColor: #ececec;
+    --page-content-bgColor: #ffffff;
     --box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.25);
 }
 
@@ -578,34 +627,11 @@ input[type="search"]::-ms-clear {
 
 @media only screen and(min-width:1200px) {}
 
-
-
-/* DASHBOARD */
-
-.adminSection .dashboard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.adminSection .dashboard>* {
-    background-color: #46c0e2;
-    padding: 1em;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.adminSection .dashboard>* p {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-
 /*   TABLE
  ---------------------------------------------------*/
 
 .table-striped>tbody>tr:nth-of-type(odd) {
-    background-color: #c6efff;
+    background-color: var(--page-header-bgColor);
 }
 
 table,
@@ -618,8 +644,12 @@ th {
     padding: 5px;
 }
 
+table .nowrap {
+    white-space: nowrap;
+}
+
 .table .itemImage {
-    max-width: 50px;
+    max-width: 90px;
 }
 
 .table-responsive {
@@ -697,7 +727,7 @@ th {
     width: 100%;
     border-radius: 5px;
     border: none;
-    background-color: #eee;
+    background-color: var(--page-header-bgColor);
     padding: 20px;
 }
 
