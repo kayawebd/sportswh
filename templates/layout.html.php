@@ -197,7 +197,7 @@
                         </ul>
                     </div>
                     <div class="footer__contact footerDirectory">
-                        <div class="footer__contact--contactUs">
+                        <div class="footer__contact--helpInfo">
                             <h2 class="footerHeading">HELP & INFORMATION</h2>
                             <ul class="footer__links">
                                 <li class="footer__link"><a href="./privacy.php">Privacy Policy</a></li>
@@ -224,7 +224,7 @@
                     </div>
 
                 </nav>
-                <div class="footer__contact--copyright">
+                <div class="footer__contact--copyright siteWrapper">
                     <p class="copyright"><small><span>&copy; Copyright <?= date("Y") ?> Sports Warehouse. All rights reserved. Disclaimer: This website is for demonstration purposes only. No real products or services are sold on this website. Any product listings, prices, or information provided here are purely fictional and intended for demonstration and illustration purposes. Any resemblance to real products, services, or entities is purely coincidental. This website does not engage in any commercial transactions, and any actions performed on this site have no real-world consequences. Thank you for visiting and understanding the nature of this demonstration website.
                         </small></p>
                 </div>

@@ -14,7 +14,7 @@
 
         <div class="videoSticky">
             <div class="videoWrapper">
-                <video src="./assets/images/video/surfing.mp4" autoplay loop playsinline aria-hidden="true"></video>
+                <video src="./assets/video/surfing.mp4" autoplay loop playsinline aria-hidden="true"></video>
             </div>
         </div>
         <div class="blogs">

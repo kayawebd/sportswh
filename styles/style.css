@@ -33,6 +33,7 @@ picture {
     max-height: 100%;
     height: auto;
     width: auto;
+    display: block;
 }
 
 /* list style */
@@ -670,7 +671,6 @@ li {
 
 .featuredOffer .row .column2 a:hover {
     color: #00aced;
-    text-decoration: underline;
 }
 
 .featuredOffer .row .column2 .content .text-link a:hover {
@@ -942,6 +942,7 @@ li {
     padding: 0.4em;
     font-size: 1.1em;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 /*-------------------------------------   PAGE BLOCK - RECOMMENDED PRODUCTS  
@@ -1084,6 +1085,7 @@ li {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .footer__link::before {
@@ -1096,9 +1098,7 @@ li {
 }
 
 .footerDirectory ul,
-.footer__contact--contactUs address ul a {
-    padding: 0;
-}
+.footer__contact--contactUs address ul a {}
 
 .footerDirectory ul a {
     padding-left: 0.7em;
@@ -1125,51 +1125,7 @@ li {
     color: #b8b8b8;
 }
 
-.footer__contact--contactUs {}
-
-.footer__contact--contactUs address {
-    text-align: left;
-}
-
-.footer__contact--contactUs address ul {
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-.footer__contact--contactUs address ul li {
-    margin: 20px 0;
-    font-size: 14px;
-}
-
-.footer__contact--contactUs address ul li i {
-    margin-right: 10px;
-}
-
-.footer__contact--contactUs .footerHeading-small {
-    margin: 20px 0;
-}
-
-
-.footer__contact--contactUs a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.1em;
-
-}
-
-.footerDirectory address a {
-    margin: 0;
-}
-
-.footer__contact--contactUs a:hover {
-    color: #b8b8b8;
-
-}
-
-.footer__contact a {
-    text-align: center;
-}
+.footer__contact a {}
 
 .copyright {
     color: white;
@@ -1182,9 +1138,12 @@ li {
         padding: 1em;
     }
 
-    .footerContainer,
-    .footer__contact--contactUs address ul li {
+    .footerContainer {
         text-align: left;
+    }
+
+    .footer__link {
+        justify-content: flex-start;
     }
 
     .footerContainer .copyright {
@@ -1520,6 +1479,7 @@ input::-webkit-inner-spin-button {
 #aboutPage {
     background-color: #000;
     color: white;
+    padding: 1em 0;
 }
 
 #aboutPage .mission {
@@ -1948,7 +1908,8 @@ input::-webkit-inner-spin-button {
 }
 
 /* .error class added on js if input not validated  */
-.error small {
+.error small,
+.error {
     color: red;
 }
 

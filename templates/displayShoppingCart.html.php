@@ -135,7 +135,7 @@
 				if (file_exists("./assets/images/product-images/" . $row["photo"]) && strlen($row["photo"]) > 0) {
 					$photoPath = "./assets/images/product-images/" . $row["photo"];
 				} else {
-					$photoPath = "./assets/images/product-images/imageUnavailable.jpg";
+					$photoPath = "./assets/images/product-images/imageUnavailable.webp";
 				}
 				$itemId = $row["itemId"];
 				$itemName = $row["itemName"];

@@ -4,5 +4,5 @@
 	<?php else : ?>
 		<p>Something went wrong and the order was not placed</p>
 	<?php endif; ?>
-	<p><a href="index.php">Back to the start</a></p>
+	<p><a href="products.php">Keep shopping</a></p>
 </div>

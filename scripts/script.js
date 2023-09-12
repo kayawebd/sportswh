@@ -1,7 +1,7 @@
 "use strict";
 
-/* –––––––––––––––––––––––––––––––––––––––––––––––––– TOP NAV BAR
- */
+/* TOP NAV BAR
+ –––––––––––––––––––––––––––––––---------------*/
 
 const menuToggle = document.getElementById("hamburgerMenu");
 const menu = document.getElementById("menu");
@@ -20,31 +20,29 @@ if (menuToggle && menu) {
   });
 }
 
-/* ––––––––––––––––––––––––––––––––––––––––––––––––––   STICKY HEADER
- */
+/*  VOICE SEARCH
+ –––––––––––––––––––––––––––––––---------------*/
 
-// // When the user scrolls the page, execute myFunction
-// window.onscroll = function () {
-//   myFunction();
-// };
-
-// // Get the header
-// var header = document.getElementById("topHeader");
-
-// // Get the offset position of the navbar
-// var sticky = header.offsetTop;
-
-// // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-// function myFunction() {
-//   if (window.pageYOffset > sticky) {
-//     header.classList.add("sticky");
-//   } else {
-//     header.classList.remove("sticky");
-//   }
-// }
-
-/*–––––––––––––––––––––––––––––––––––––––– DELETE COMFIRMATION PROMPT
- */
+function startDictation() {
+  if (window.hasOwnProperty("webkitSpeechRecognition")) {
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = "en-US";
+    recognition.start();
+    recognition.onresult = function (e) {
+      document.getElementById("search").value = e.results[0][0].transcript;
+      recognition.stop();
+    };
+    recognition.onerror = function (e) {
+      recognition.stop();
+    };
+  } else {
+    alert("Speech recognition is not supported in your browser.");
+  }
+}
+/*  DELETE COMFIRMATION PROMPT
+ –––––––––––––––––––––––––––––––---------------*/
 
 // add onclick="return confirmDelete(event) in the link to show prompt
 function confirmDelete(event) {
@@ -56,8 +54,8 @@ function confirmDelete(event) {
   return true;
 }
 
-/* –––––––––––––––––––––––––––––––––---------- PASSWORD SHOW/HIDE
- */
+/*  PASSWORD SHOW/HIDE
+ –––––––––––––––––––––––––––––––---------------*/
 
 const PASSWORD = document.getElementById("password");
 const CONFIRM_PASSWORD = document.getElementById("confirmPassword");
@@ -87,8 +85,8 @@ if (PASSWORD || CONFIRM_PASSWORD) {
   }
 }
 
-/* –––––––––––––––––––––––––––––––  ADD TO CART shoppingQuantityCounter
- */
+/*  ADD TO CART shoppingQuantityCounter
+ –––––––––––––––––––––––––––––––---------------*/
 function increaseNumber(a, b) {
   var input = b.previousElementSibling;
   var value = parseInt(input.value, 10);
@@ -107,64 +105,8 @@ function decreaseNumber(a, b) {
   }
 }
 
-/*––––––––––––––––––––––––––––––––––––––  DISPLAY PHOTO SIZE TO BE UPLOADED
- */
-function handleFileSelect(event) {
-  const file = event.target.files[0];
-  const fileSize = (file.size / 1024).toFixed(2) + " KB";
-  const newPhotoImageName = file.name;
-  document.getElementById("fileSize").textContent = "File Size: " + fileSize;
-  document.getElementById("newPhoto").src = window.URL.createObjectURL(file);
-  console.log(newPhotoImageName);
-  const currentPhotoElement = document.getElementById("currentPhoto");
-  const srcAttribute = currentPhotoElement.getAttribute("src");
-  const oldPhotoimageName = srcAttribute.split("/").pop().trim();
-  console.log(oldPhotoimageName);
-}
-
-/* –––––––––––––––––––––––––––––––– LOG USER OUT IN XX MINUTES WHEN NOT ACTIVE
- */
-
-// var inactivityTimeout = 10 * 1000; // 30 minutes (convert to milliseconds)
-// var timer;
-// function startTimer() {
-//   timer = setTimeout(logout, inactivityTimeout);
-// }
-// function resetTimer() {
-//   clearTimeout(timer);
-//   startTimer();
-// }
-// function logout() {
-//   window.location.href = "./logout.php";
-// }
-// window.addEventListener("mousemove", resetTimer);
-// window.addEventListener("keypress", resetTimer);
-// startTimer();
-
-/*–––––––––––––––––––––––––––––––––––––––––––––––––– VOICE SEARCH
- */
-
-function startDictation() {
-  if (window.hasOwnProperty("webkitSpeechRecognition")) {
-    var recognition = new webkitSpeechRecognition();
-    recognition.continuous = false;
-    recognition.interimResults = false;
-    recognition.lang = "en-US";
-    recognition.start();
-    recognition.onresult = function (e) {
-      document.getElementById("search").value = e.results[0][0].transcript;
-      recognition.stop();
-    };
-    recognition.onerror = function (e) {
-      recognition.stop();
-    };
-  } else {
-    alert("Speech recognition is not supported in your browser.");
-  }
-}
-
-/* –––––––––––––––––––––––––––--------------–––––  SLIDE SHOW
- */
+/*  SLIDE SHOW
+ –––––––––––––––––––––––––––––––---------------*/
 
 if (document.getElementById("slideshow")) {
   let slideIndex = 1;
@@ -211,8 +153,63 @@ if (document.getElementById("slideshow")) {
   });
 }
 
-/* ––––––––––––––––––––––––––––––––––––––––––––––––––   FORM VALIDATION
- */
+/*  CONTACT FORM - CHARACTER COUNTER
+ –––––––––––––––––––––––––––––––---------------*/
+
+if (document.getElementById("contactPage")) {
+  const textarea = document.getElementById("message");
+  const charCount = document.getElementById("charCount");
+  const maxChars = 2500;
+  textarea.addEventListener("input", function () {
+    const currentChars = textarea.value.length;
+    const remainingChars = maxChars - currentChars;
+    charCount.textContent = `Characters remaining: ${remainingChars}`;
+    if (remainingChars < 0) {
+      textarea.value = textarea.value.slice(0, maxChars);
+      charCount.textContent = "Character limit reached.";
+    }
+  });
+}
+
+/* ABOUT PAGE - DYNAMIC FONT SIZE
+ –––––––––––––––––––––––––––––––---------------*/
+if (document.getElementById("aboutPage")) {
+  const DYNAMIC_FONT = document.getElementById("dynamicFontSize");
+  // const DYNAMIC_PADDING = document.getElementById("dynamicPadding");
+  function adjustFontSize() {
+    const VIEW_PORT_WIDTH = window.innerWidth || document.clientWidth;
+    const FONT_SIZE = VIEW_PORT_WIDTH * 0.11;
+    localStorage.setItem("fontSize", FONT_SIZE);
+    if (VIEW_PORT_WIDTH <= 3200) {
+      DYNAMIC_FONT.style.fontSize = FONT_SIZE + "px";
+    }
+  }
+  window.addEventListener("load", adjustFontSize);
+  window.addEventListener("resize", adjustFontSize);
+  window.addEventListener("load", () => {
+    const STORED_FONT_SIZE = localStorage.getItem("fontSize");
+    if (STORED_FONT_SIZE) {
+      DYNAMIC_FONT.style.fontSize = STORED_FONT_SIZE + "px";
+    }
+  });
+}
+
+/* CAHNGE HEADER BACKGROUND COLOR ON ABOUT PAGE
+ –––––––––––––––––––––––––––––––---------------*/
+const FULL_PATH = window.location.pathname;
+const SPLITED_PATH = FULL_PATH.split("/");
+const PATH_NAME = SPLITED_PATH[SPLITED_PATH.length - 1];
+if (PATH_NAME === "about.php") {
+  const SITE_HEADER = document.getElementById("siteHeader");
+  const CATEGORY_NAV = document.querySelector(".categoryNav");
+  const FOOTER = document.querySelector(".footerContainer");
+  SITE_HEADER.style.backgroundColor = "black";
+  CATEGORY_NAV.style.backgroundColor = "black";
+  FOOTER.style.backgroundColor = "black";
+}
+
+/*  FORM VALIDATION
+ –––––––––––––––––––––––––––––––---------------*/
 
 if (document.getElementById("contactForm")) {
   // const CONTACT_FORM = document.getElementById("contactForm");
@@ -397,63 +394,4 @@ if (document.getElementById("contactForm")) {
   // function submitTheForm() {
   //   document.getElementById("form").submit();
   // }
-}
-
-/*––––––––––––––––––––––––––––––––––––––––––––––––    CONTACT FORM - CHARACTER COUNTER
- */
-
-if (document.getElementById("contactPage")) {
-  const textarea = document.getElementById("message");
-  const charCount = document.getElementById("charCount");
-  const maxChars = 2500;
-  textarea.addEventListener("input", function () {
-    const currentChars = textarea.value.length;
-    const remainingChars = maxChars - currentChars;
-    charCount.textContent = `Characters remaining: ${remainingChars}`;
-    if (remainingChars < 0) {
-      textarea.value = textarea.value.slice(0, maxChars);
-      charCount.textContent = "Character limit reached.";
-    }
-  });
-}
-
-/*––––––––––––––––––––––––––––––––––––––––––––––––    ABOUT PAGE - DYNAMIC FONT SIZE
- */
-if (document.getElementById("aboutPage")) {
-  const DYNAMIC_FONT = document.getElementById("dynamicFontSize");
-  // const DYNAMIC_PADDING = document.getElementById("dynamicPadding");
-  function adjustFontSize() {
-    const VIEW_PORT_WIDTH = window.innerWidth || document.clientWidth;
-    const FONT_SIZE = VIEW_PORT_WIDTH * 0.11;
-    localStorage.setItem("fontSize", FONT_SIZE);
-    if (VIEW_PORT_WIDTH <= 3200) {
-      DYNAMIC_FONT.style.fontSize = FONT_SIZE + "px";
-    }
-  }
-
-  window.addEventListener("load", adjustFontSize);
-  window.addEventListener("resize", adjustFontSize);
-  window.addEventListener("load", () => {
-    const STORED_FONT_SIZE = localStorage.getItem("fontSize");
-    if (STORED_FONT_SIZE) {
-      DYNAMIC_FONT.style.fontSize = STORED_FONT_SIZE + "px";
-    }
-  });
-}
-
-// CAHNGE HEADER BACKGROUND COLOR ON ABOUT PAGE
-// Check if the current page is the contact page (you can use your own logic)
-const FULL_PATH = window.location.pathname;
-const SPLITED_PATH = FULL_PATH.split("/");
-const PATH_NAME = SPLITED_PATH[SPLITED_PATH.length - 1];
-if (PATH_NAME === "about.php") {
-  // Get the siteHeader element
-  const SITE_HEADER = document.getElementById("siteHeader");
-  const CATEGORY_NAV = document.querySelector(".categoryNav");
-  const FOOTER = document.querySelector(".footerContainer");
-
-  // Set the background color to black
-  SITE_HEADER.style.backgroundColor = "black";
-  CATEGORY_NAV.style.backgroundColor = "black";
-  FOOTER.style.backgroundColor = "black";
 }

@@ -39,7 +39,7 @@
             </p>
             <p class="textarea">
                 <label for="description">Description:</label>
-                <textarea name="description" id="description" cols="30" rows="10" required></textarea>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Description should be at least 10 charactors" required></textarea>
 
             </p>
             <p class="featured">

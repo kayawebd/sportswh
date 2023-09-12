@@ -6,6 +6,7 @@
                 <a href="./products.php">
                     <div class="content">
                         <h2 class="sr-only">Promotion</h2>
+                        <h3>This is a demonstration website, No real products are sold</h3>
                         <p class="bannerFont-large">
                             UP TO <span class="discountPercentage">30%</span> EXTRA OFF OUTLET!
                         </p>
@@ -149,7 +150,7 @@
                         if (file_exists("./assets/images/product-images/" . $row["photo"]) && strlen($row["photo"]) > 0) {
                             $photoPath = "./assets/images/product-images/" . $row["photo"];
                         } else {
-                            $photoPath = "./assets/images/product-images/imageUnavailable.jpg";
+                            $photoPath = "./assets/images/product-images/imageUnavailable.webp";
                         }
                         $itemId = $row["itemId"];
                         $itemName = $row["itemName"];
@@ -253,7 +254,7 @@
                 <div class="row">
                     <a href="./productsByCategory.php?id=1" class="column4">
                         <div class="imgWrapper">
-                            <img src="./assets/images/productByCategory/shoes.webp" alt="category shoes">
+                            <img src="./assets/images/product-by-category/shoes.webp" alt="category shoes">
                         </div>
                         <div class="content">
                             <span class="title">Shoes</span>
@@ -261,7 +262,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=2" class="column4">
                         <div class="imgWrapper">
-                            <img src="./assets/images/productByCategory/helmet.webp" alt="category helmet">
+                            <img src="./assets/images/product-by-category/helmet.webp" alt="category helmet">
                         </div>
                         <div class="content">
                             <span class="title">Helmet</span>
@@ -269,7 +270,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=33" class="column4">
                         <div class="imgWrapper">
-                            <img src="./assets/images/productByCategory/pants.webp" alt="category pants">
+                            <img src="./assets/images/product-by-category/pants.webp" alt="category pants">
                         </div>
                         <div class="content">
                             <span class="title">Pants</span>
@@ -277,7 +278,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=4" class="column4">
                         <div class="imgWrapper">
-                            <img src="./assets/images/productByCategory/tops.webp" alt="category tops">
+                            <img src="./assets/images/product-by-category/tops.webp" alt="category tops">
                         </div>
                         <div class="content">
                             <span class="title">Tops</span>
@@ -285,7 +286,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=5" class="column4">
                         <div class="imgWrapper">
-                            <img src="./assets/images/productByCategory/balls3.webp" alt="category balls">
+                            <img src="./assets/images/product-by-category/balls3.webp" alt="category balls">
                         </div>
                         <div class="content">
                             <span class="title">Balls</span>
@@ -293,7 +294,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=6" class="column4">
                         <div class="imgWrapper">
-                            <img src="./assets/images/productByCategory/equipment.webp" alt="category equipment">
+                            <img src="./assets/images/product-by-category/equipment.webp" alt="category equipment">
                         </div>
                         <div class="content">
                             <span class="title">Equipment</span>
@@ -301,7 +302,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=7" class="column4">
                         <div class="imgWrapper">
-                            <img src="./assets/images/productByCategory/trainingGear.webp" alt="">
+                            <img src="./assets/images/product-by-category/trainingGear.webp" alt="">
                         </div>
                         <div class="content">
                             <span class="title">Training Gear</span>
@@ -309,7 +310,7 @@
                     </a>
                     <a href="./productsByCategory.php?id=171" class="column4">
                         <div class="imgWrapper">
-                            <img src="./assets/images/productByCategory/tech.webp" alt="category tech">
+                            <img src="./assets/images/product-by-category/tech.webp" alt="category tech">
                         </div>
                         <div class="content">
                             <span class="title">Tech</span>
@@ -339,7 +340,7 @@
                         if (file_exists("./assets/images/product-images/" . $row["photo"]) && strlen($row["photo"]) > 0) {
                             $photoPath = "./assets/images/product-images/" . $row["photo"];
                         } else {
-                            $photoPath = "./assets/images/product-images/imageUnavailable.jpg";
+                            $photoPath = "./assets/images/product-images/imageUnavailable.webp";
                         }
                         $itemId = $row["itemId"];
                         $itemName = $row["itemName"];
