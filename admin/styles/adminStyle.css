@@ -644,8 +644,12 @@ th {
     padding: 5px;
 }
 
+table .nowrap {
+    white-space: nowrap;
+}
+
 .table .itemImage {
-    max-width: 50px;
+    max-width: 90px;
 }
 
 .table-responsive {

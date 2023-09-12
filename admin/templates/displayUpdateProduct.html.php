@@ -22,7 +22,7 @@ if (isset($_GET["id"])) {
     $itemID = 0;
 }
 
-$sql = "SELECT itemId, itemName, photo, price, salePrice, description, featured, productCode, category.categoryId FROM item, category WHERE item.categoryId = category.categoryId  AND itemId = :itemID;";
+$sql = "SELECT itemId, itemName, photo, price, salePrice, description, featured, item.productCode, category.categoryId FROM item, category WHERE item.categoryId = category.categoryId  AND itemId = :itemID";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(":itemID", $itemID, PDO::PARAM_INT);
 $editRows = $db->executeSQL($stmt);
@@ -43,10 +43,6 @@ if (count($editRows) > 0) {
             <p>
                 <label for="itemName">Item Name:</label>
                 <input type="text" name="itemName" id="itemName" value="<?= $editRow["itemName"] ?>" required>
-            </p>
-            <p>
-                <label for="productCode">Product Code:</label>
-                <input type="number" name="productCode" id="productCode" value="<?= $editRow["productCode"] ?>">
             </p>
             <p>
                 <img src="../assets/images/product-images/<?= $editRow["photo"] ?>" alt=" <?= $editRow["itemName"] ?> photo" id="currentPhoto" />
@@ -114,6 +110,10 @@ if (count($editRows) > 0) {
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </select>
+            </p>
+            <p>
+                <label for="productCode">Product Code:</label>
+                <input type="text" name="productCode" id="productCode" value="<?= $editRow["productCode"] ?>">
             </p>
             <div class="formAction">
                 <input type="hidden" value="<?= $editRow["itemId"] ?>" name="itemId">

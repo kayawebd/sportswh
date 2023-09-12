@@ -21,6 +21,7 @@
         <thead>
             <tr>
                 <th>Item ID</th>
+                <th>Product Code</th>
                 <th>Item Name</th>
                 <th>Photo</th>
                 <th>Price</th>
@@ -34,7 +35,7 @@
         <tbody>
             <?php
             // ---1-----select all items to display in the table 
-            $sql = "SELECT itemId, itemName, photo, price, salePrice, description, featured, category.categoryName FROM item, category WHERE item.categoryId = category.categoryId Order by itemId";
+            $sql = "SELECT itemId, itemName, photo, price, salePrice, productCode, description, featured, category.categoryName FROM item, category WHERE item.categoryId = category.categoryId Order by itemId";
             $stmt = $pdo->prepare($sql);
             $itemRows = $db->executeSQL($stmt);
 
@@ -46,9 +47,11 @@
                 $salePrice = $itemrow["salePrice"];
                 $featured = $itemrow["featured"];
                 $categoryName = $itemrow["categoryName"];
+                $productCode = $itemrow["productCode"];
             ?>
                 <tr>
                     <td><?= $itemId ?></td>
+                    <td class="nowrap"><?= $productCode ?></td>
                     <td><?= $itemName ?></td>
                     <td><img src="../assets/images/product-images/<?= $photo ?>" alt="<?= $photo ?> image" class="itemImage"></td>
                     <td><?= $price ?></td>

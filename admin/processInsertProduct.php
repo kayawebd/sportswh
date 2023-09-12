@@ -75,7 +75,7 @@ if (isset($_POST["submitInsert"])) {
             // upload photo if no error
             if ($photoUploadError !== true) {
                 if (move_uploaded_file($_FILES["photoToUpload"]["tmp_name"], $targetFile)) {
-                    $photo = $photoToUpload;
+                    $photo = trim($photoToUpload);
                 } else {
                     $uploadErrMessages[] = "There was an error uploading your file. Error code:" . $_FILES["photoToUpload"]["error"];
                     $photo = "imageUnavailable.webp";

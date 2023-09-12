@@ -1,5 +1,5 @@
 <section class="shoppingCart cartWrapper">
-	<div class="shoppingCart__leftside">
+	<div class="column-cart">
 		<div class="shoppingCart__table">
 			<?php
 			if (isset($_SESSION["cart"])) {
@@ -39,6 +39,10 @@
 					<div class="shoppingCart__row">
 						<div class="shopppingCart__row_image">
 							<img src="./assets/images/product-images/<?= $productPhoto ?>" alt="">
+							<form action="shopping.php" method="post" class="shoopingCart__edit">
+								<input type="submit" name="remove" value="Remove" class="shoppingCart__link">
+								<input type="hidden" value="<?= $productId ?>" name="productId">
+							</form>
 						</div>
 						<div class="shoppingCart__row_info">
 							<div class="shoppingCart__row_itemDetails">
@@ -58,7 +62,7 @@
 							<?php
 							if ($salePrice > 0) {
 							?>
-								<div class="shoppingCart__row_salePrice product__price-onSale">$<?= $salePrice ?><br>Sale</div>
+								<div class="shoppingCart__row_salePrice product__price-onSale">$<?= $salePrice ?></div>
 								<div class="shoppingCart__row_price"><del>$<?= $price ?></del></div>
 							<?php
 								$price = $salePrice;
@@ -72,13 +76,10 @@
 
 
 							<div class="shoppingCart__row_totalPrice">$<?= $qty * $price ?></div>
+
 						</div>
 
 					</div>
-					<form action="shopping.php" method="post" class="shoopingCart__edit">
-						<input type="submit" name="remove" value="Remove" class="shoppingCart__link">
-						<input type="hidden" value="<?= $productId ?>" name="productId">
-					</form>
 
 				<?php endforeach; ?>
 			<?php
@@ -88,9 +89,9 @@
 		</div>
 	</div>
 
-	<div class="shoopingCart__rightside">
-		<div class="shoopingCart__rightside-payment">
-			<h2>Summary</h2>
+	<div class="column-summary">
+		<div class="column-summary-payment">
+			<h2>Summary:</h2>
 			<div class="orderDetail">
 				<div class="orderDetail__subtotal">
 					<div class="columnLeft">Subtotal</div>
@@ -114,7 +115,10 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
 </section>
+
 <div class="recommendedProductContainer">
 	<div class="siteWrapper">
 		<?php

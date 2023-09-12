@@ -22,6 +22,7 @@
                 <label for="itemName">Item Name:</label>
                 <input type="text" name="itemName" id="itemName" required>
             </p>
+
             <p>
                 <!--  post_max_size? -->
                 <label for="photo">Photo:</label>
@@ -50,16 +51,24 @@
                 <label for="category">Category:</label>
                 <select name="categoryId" id="category">
                     <?php
-                    $sql = "SELECT categoryId, categoryName FROM category";
+                    $sql = "SELECT categoryId, categoryName, categoryCode FROM category";
                     $stmt = $pdo->prepare($sql);
                     $categoryRows = $db->executeSQL($stmt);
                     foreach ($categoryRows as $categoryRow) :
                         $categoryId = $categoryRow["categoryId"];
                         $categoryName = $categoryRow["categoryName"];
+                        $categoryCode = $categoryRow["categoryCode"];
                     ?>
                         <option value="<?= $categoryId ?>"><?= $categoryName ?></option>
                     <?php endforeach; ?>
                 </select>
+            </p>
+            <p>
+                <!-- query:  UPDATE item
+SET productCode = CONCAT('SHO-NIKE-', LPAD(itemId, 4, '0'))
+WHERE categoryId = 1; -->
+                <label for="productCode">Product Code:</label>
+                <input type="text" name="productCode" id="productCode" value="<?= $categoryCode ?>-<?= $categoryId ?>-">
             </p>
             <div class="formAction">
                 <input type="submit" name="submitInsert" value="Add Product">

@@ -1,4 +1,17 @@
+<?php
+$sql = "SELECT itemId, itemName, photo, price, salePrice, description, category.categoryName FROM item JOIN category ON item.categoryId = category.categoryId WHERE category.categoryId = :id";
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(":id", $_GET["id"]);
+$productRows = $db->executeSQL($stmt);
+$categoryName = $productRows[0]["categoryName"];
+?>
 <div class="mainContents">
+    <div class="breadcrumb siteWrapper">
+        <a class="breadcrumb-element" href="./index.php">Home</a>
+        <a class="breadcrumb-element" href="./products.php">Products</a>
+        <a class="breadcrumb-element" href="./productsByCategory.php?id=<?= $categoryId ?>"><?= $categoryName ?></a>
+    </div>
+    <h1 class="categoryHeading"><?= $categoryName ?></h1>
     <div class="productsContainer">
         <div class="products siteWrapper">
             <?php foreach ($productRows as $productRow) :
@@ -13,6 +26,7 @@
                 $price = $productRow["price"];
                 $description = $productRow["description"];
                 $salePrice = $productRow["salePrice"];
+                $categoryName = $productRow["categoryName"];
             ?>
                 <article class="item">
                     <a href="./productDetails.php?id=<?= $itemId ?>" class="link">
