@@ -3,6 +3,8 @@
         <h2 class="form__title">
             login
         </h2>
+        <p>Username: admin-sportswh</p>
+        <p>password: HdJH&^*$^5678</p>
         <p class="adminMessage"><?= $message ?></p>
 
         <div class="inputsContainer">
