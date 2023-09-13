@@ -9,40 +9,42 @@ if (!empty($_GET["search"])) {
 }
 ?>
 
-<div class="productsByCategory">
-    <?php foreach ($searchResultRows as $row) :
-        if (file_exists("./assets/images/product-images/" . $row["photo"]) && strlen($row["photo"]) > 0) {
-            $photoPath = "./assets/images/product-images/" . $row["photo"];
-        } else {
-            $photoPath = "./assets/images/product-images/imageUnavailable.webp";
-        }
-        $itemId = $row["itemId"];
-        $itemName = $row["itemName"];
-        $photo = $row["photo"];
-        $price = $row["price"];
-        $description = $row["description"];
-        $salePrice = $row["salePrice"];
-    ?>
-        <article class="product__item">
-            <a href="./productDetails.php?id=<?= $itemId ?>" class="product__link">
-                <div class="product__photo-frame">
-                    <img src="<?= $photoPath ?>" class="product__photo" width="500" height="500" alt="<?= $itemName ?>">
-                </div>
-                <?php
-                if ($salePrice <= 0) {
-                ?><p class="product__price">$<?= $price ?></p>
-                <?php
-                } else {
-                ?>
-                    <p class="product__price"><span class="product__price-onSale">$<?= $salePrice ?></span>
-                        <span class="product__priceDescription">was</span>
-                        <del>$<?= $price ?></del>
-                    </p>
-                <?php
-                }
-                ?>
-                <h3 class="product__heading"><?= $itemName ?></h3>
-            </a>
-        </article>
-    <?php endforeach; ?>
+<div class="productsContainer">
+    <div class="products siteWrapper">
+        <?php foreach ($searchResultRows as $row) :
+            if (file_exists("./assets/images/product-images/" . $row["photo"]) && strlen($row["photo"]) > 0) {
+                $photoPath = "./assets/images/product-images/" . $row["photo"];
+            } else {
+                $photoPath = "./assets/images/product-images/imageUnavailable.webp";
+            }
+            $itemId = $row["itemId"];
+            $itemName = $row["itemName"];
+            $photo = $row["photo"];
+            $price = $row["price"];
+            $description = $row["description"];
+            $salePrice = $row["salePrice"];
+        ?>
+            <article class="item">
+                <a href="./productDetails.php?id=<?= $itemId ?>" class="link">
+                    <div class="photo-frame">
+                        <img src="<?= $photoPath ?>" class="photo" width="500" height="500" alt="<?= $itemName ?>">
+                    </div>
+                    <?php
+                    if ($salePrice <= 0) {
+                    ?><p class="price">$<?= $price ?></p>
+                    <?php
+                    } else {
+                    ?>
+                        <p class="price"><span class="price-onSale">$<?= $salePrice ?></span>
+                            <span class="priceDescription">was</span>
+                            <del>$<?= $price ?></del>
+                        </p>
+                    <?php
+                    }
+                    ?>
+                    <h3 class="heading"><?= $itemName ?></h3>
+                </a>
+            </article>
+        <?php endforeach; ?>
+    </div>
 </div>

@@ -1,4 +1,152 @@
 <div class="mainContents">
+    <!-- filter -->
+    <div role="region" aria-label="Filters" class="filterListsContainer">
+        <div class="siteWrapper">
+            <ul class="filterLists">
+                <li class="filterList" data-auto-id="sort">
+                    <div class="filterList-container">
+                        <button aria-haspopup="listbox" aria-expanded="false" class="filterList-button" data-filter-toggle="true">
+                            <div class="filterList-title">
+                                Sort
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 512 512">
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                            </svg>
+                        </button>
+                        <div class="collapsibleMenu" data-filter-dropdown="true">
+                        </div>
+                    </div>
+                </li>
+                <li data-auto-id="attribute_1047" class="filterList">
+                    <div class="filterList-container">
+                        <button aria-haspopup="true" aria-expanded="false" class="filterList-button" data-filter-toggle="true">
+                            <div class="filterList-title">
+                                Product Type
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 512 512">
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                            </svg>
+                        </button>
+                        <div class="collapsibleMenu" data-filter-dropdown="true">
+                        </div>
+                    </div>
+                </li>
+                <li data-auto-id="range" class="filterList">
+                    <div class="filterList-container">
+                        <button aria-haspopup="true" aria-expanded="false" class="filterList-button" data-filter-toggle="true">
+                            <div class="filterList-title">
+                                Sale/ New Season
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 512 512">
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                            </svg>
+                        </button>
+                        <div class="collapsibleMenu" data-filter-dropdown="true">
+                        </div>
+                    </div>
+                </li>
+                <li data-auto-id="attribute_1046" class="filterList">
+                    <div class="filterList-container">
+                        <button aria-haspopup="true" aria-expanded="false" class="filterList-button" data-filter-toggle="true">
+                            <div class="filterList-title">
+                                Style
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 512 512">
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                            </svg>
+                        </button>
+                        <div class="collapsibleMenu" data-filter-dropdown="true">
+                        </div>
+                    </div>
+                </li>
+                <li data-auto-id="attribute_10147" class="filterList">
+                    <div class="filterList-container">
+                        <button aria-haspopup="true" aria-expanded="false" class="filterList-button" data-filter-toggle="true">
+                            <div class="filterList-title">
+                                Leather/Non Leather
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 512 512">
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                            </svg>
+                        </button>
+                        <div class="collapsibleMenu" data-filter-dropdown="true">
+                        </div>
+                    </div>
+                </li>
+                <li data-auto-id="base_colour" class="filterList">
+                    <div class="filterList-container">
+                        <button aria-haspopup="true" aria-expanded="false" class="filterList-button" data-filter-toggle="true">
+                            <div class="filterList-title">
+                                Colour
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 512 512">
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                            </svg>
+                        </button>
+                        <div class="collapsibleMenu" data-filter-dropdown="true">
+                        </div>
+                    </div>
+                </li>
+                <li data-auto-id="brand" class="filterList">
+                    <div class="filterList-container">
+                        <button aria-haspopup="true" aria-expanded="false" class="filterList-button" data-filter-toggle="true">
+                            <div class="filterList-title">
+                                Brand
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 512 512">
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                            </svg>
+                        </button>
+                        <div class="collapsibleMenu" data-filter-dropdown="true">
+                        </div>
+                    </div>
+                </li>
+                <li data-auto-id="attribute_10155" class="filterList">
+                    <div class="filterList-container">
+                        <button aria-haspopup="true" aria-expanded="false" class="filterList-button" data-filter-toggle="true">
+                            <div class="filterList-title">
+                                Body Fit
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 512 512">
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                            </svg>
+                        </button>
+                        <div class="collapsibleMenu" data-filter-dropdown="true">
+                        </div>
+                    </div>
+                </li>
+                <li data-auto-id="size" class="filterList">
+                    <div class="filterList-container">
+                        <button aria-haspopup="true" aria-expanded="false" class="filterList-button" data-filter-toggle="true">
+                            <div class="filterList-title">
+                                Size
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 512 512">
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                            </svg>
+                        </button>
+                        <div class="collapsibleMenu" data-filter-dropdown="true">
+                        </div>
+                    </div>
+                </li>
+                <li data-auto-id="currentprice" class="filterList">
+                    <div class="filterList-container">
+                        <button aria-haspopup="true" aria-expanded="false" class="filterList-button" data-filter-toggle="true">
+                            <div class="filterList-title">
+                                Price Range
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 512 512">
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                            </svg>
+                        </button>
+                        <div class="collapsibleMenu" data-filter-dropdown="true">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- end of filter -->
     <div class="productsContainer">
         <div class="products siteWrapper">
             <?php

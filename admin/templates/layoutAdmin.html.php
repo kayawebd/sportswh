@@ -6,17 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | <?= $title ?></title>
-    <link rel="stylesheet" href="./styles/normalize.css">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="./styles/adminStyle.css">
-    <!-- <script defer src="../scripts/script.js"></script> -->
-    <script defer src="./scripts/adminScript.js"></script>
     <link rel="icon" href="../assets/images/company-logo/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="./styles/adminStyle.css">
+    <script defer src="./scripts/adminScript.js"></script>
 
 <body>
-
-    <svg style="display:none;">
-
+    <svg>
         <symbol id="sw-logo" data-name="Sports Warehouse logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 2200 300">
             <defs>
                 <style>
@@ -62,9 +58,9 @@
                 </svg>
             </button>
             <ul class="admin-menu">
-                <!-- <li class="menu-heading">
+                <li class="menu-heading">
                     <h3>Admin</h3>
-                </li> -->
+                </li>
                 <li>
                     <a href="./displayDashboard.php">
                         <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">

@@ -28,4 +28,19 @@ To run the Sports Warehouse website locally or deploy it on your web server, fol
 1. **Clone the Repository:**
 
    ```bash
+   cd D:\your_working_folder\
    git clone https://github.com/kayawebd/sportswh.git
+
+2. **Import MySql database:**
+
+    sportswh.sql
+
+3. **Run on local machine**
+
+    Use local development server like: XAMPP
+
+
+    Enjoy ^
+
+
+

@@ -12,8 +12,8 @@ $categoryName = $productRows[0]["categoryName"];
         <a class="breadcrumb-element" href="./productsByCategory.php?id=<?= $categoryId ?>"><?= $categoryName ?></a>
     </div>
     <h1 class="categoryHeading"><?= $categoryName ?></h1>
-    <div class="productsContainer">
-        <div class="products siteWrapper">
+    <div class="productsContainer siteWrapper">
+        <div class="products">
             <?php foreach ($productRows as $productRow) :
                 if (file_exists("./assets/images/product-images/" . $productRow["photo"]) && strlen($productRow["photo"]) > 0) {
                     $photoPath = "./assets/images/product-images/" . $productRow["photo"];
