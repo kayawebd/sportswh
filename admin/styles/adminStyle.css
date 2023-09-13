@@ -177,7 +177,8 @@ body {
 /* PAGE CONTENT STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .page-content {
-    position: relative;
+    position: absolute;
+    top: 0;
     left: var(--page-header-width);
     width: calc(100% - var(--page-header-width));
     min-height: 100vh;

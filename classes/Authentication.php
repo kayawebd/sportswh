@@ -72,11 +72,12 @@ class Authentication
 			$_SESSION["address"] = $userInfo["address"];
 			$_SESSION["roles"] = $userInfo["roles"];
 
-			if ($roles === 'admin') {
-				header("Location: " . self::AdminSuccessPageURL);
-			} else {
-				header("Location: " . self::UserSuccessPageURL);
-			}
+			// if ($roles === 'admin') {
+			// 	header("Location: " . self::AdminSuccessPageURL);
+			// } else {
+			// 	header("Location: " . self::UserSuccessPageURL);
+			// }
+			header("Location: " . self::AdminSuccessPageURL);
 			exit;
 		} else {
 			return false;

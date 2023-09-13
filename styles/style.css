@@ -2524,14 +2524,15 @@ input::-webkit-inner-spin-button {
     text-decoration: underline;
 }
 
-/*---------------------------------- PAGE -  PRODUCTS BY CATEGORY
+/*---------------------------------- PAGE - PRODUCTS BY CATEGORY
 */
 
 .mainContents .categoryHeading {
     background-color: #eee;
-    padding: 1.5em 0;
+    padding: 1em 0;
     font-size: 2.25em;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
+    margin: 0;
 }
