@@ -1,6 +1,6 @@
 <div>
     <p class="adminMessage"><?= $message ?></p>
-    <h1 class="sr-only">Dashboard</h1>
+    <h1 class="adminHeading">Dashboard</h1>
     <div class="dashboard">
 
         <div class="totalSales">

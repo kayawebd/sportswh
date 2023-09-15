@@ -62,6 +62,7 @@ svg {
     display: block;
 }
 
+
 body {
     font: 16px/1.5 "Lato", sans-serif;
 }
@@ -69,6 +70,8 @@ body {
 
 /* HEADER STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
 .page-header {
     position: fixed;
     top: 0;
@@ -93,9 +96,17 @@ body {
     margin: 0 15px;
 }
 
+
 .page-header .logo svg {
-    max-width: 100%;
-    fill: var(--white);
+    fill: white;
+}
+
+.page-header .logo svg #SW_background {
+    fill: #00aced;
+}
+
+.page-header .logo svg #Warehouse {
+    fill: #ff690c;
 }
 
 .page-header .toggle-mob-menu {
@@ -417,7 +428,7 @@ input[type="search"]::-ms-clear {
     }
 
     .page-content {
-        min-height: 0;
+        min-height: 100vh;
         padding: 10px;
     }
 
@@ -816,3 +827,6 @@ table .nowrap {
         width: 50%;
     }
 }
+
+
+/* test table */

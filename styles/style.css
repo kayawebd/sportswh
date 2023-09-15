@@ -20,7 +20,6 @@ body {
 
 /* Screen-reader only text */
 .sr-only:not(:focus) {
-    clip: rect(1px, 1px, 1px, 1px);
     overflow: hidden;
     position: absolute;
     height: 1px;
@@ -77,7 +76,7 @@ li {
 
 /* tawk icon  */
 .tawk-icon-right img {
-    display: none !important;
+    display: none;
 }
 
 /* -------------------------------------------- PAGE BLOCK - HEADER NAVIGATION    
@@ -834,13 +833,6 @@ li {
 /*---------------------------------------- PAGE PARTS - PRODUCT FILTER
 */
 
-:root {
-    --1fot7dv: #000;
-    --font-color: #666;
-    --1wwppwc: #eee;
-    --1cf22is: #0770cf;
-}
-
 ul {
     border: 0;
     margin: 0;
@@ -909,7 +901,7 @@ li {
 }
 
 .filterList-button:hover:after {
-    background-color: var(--1cf22is);
+    background-color: #0770cf;
 }
 
 .collapsibleMenu {
@@ -947,7 +939,7 @@ li {
     }
 
     .filterListsContainer {
-        background-color: var(--1wwppwc);
+        background-color: #eee;
     }
 
     .filterList:nth-of-type(4n) [data-filter-dropdown="true"] {
@@ -1479,6 +1471,149 @@ input::-webkit-inner-spin-button {
     padding: 1em;
 }
 
+/*--------------------------------  PAGE BLOCK -  TABS
+ */
+
+.tabContainer {
+    /* background-color: #b3b3b3; */
+    padding: 4rem 0;
+}
+
+.tabContainer .tab-wrapper {
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 100%;
+    padding: 2em;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.tabContainer .tab-wrapper>input,
+.tabContainer .tab-wrapper .tab-contents .content {
+    display: none;
+}
+
+.tabContainer #tab1:checked~.tab-layout .tab-contents .tab1,
+.tabContainer #tab2:checked~.tab-layout .tab-contents .tab2,
+.tabContainer #tab3:checked~.tab-layout .tab-contents .tab3 {
+    display: block;
+}
+
+.tabContainer .tab-layout {}
+
+.tabContainer .tab-layout .tab-nav {}
+
+.tabContainer .tab-layout .tab-contents {
+    /* set the height for the longest content */
+    min-height: 400px;
+}
+
+.tabContainer .tab-layout .tab-nav ul {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tabContainer .tab-layout .tab-nav ul li {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.tabContainer .tab-layout .tab-nav ul li label {
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1em;
+    fill: #a4a4a4;
+    color: #a4a4a4;
+}
+
+.tabContainer .tab-layout .tab-nav ul li label .tab-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.tabContainer .tab-layout .tab-nav ul li label svg {
+    height: 2rem;
+}
+
+.tabContainer .tab-layout .tab-contents .content .content-heading {
+    text-align: center;
+    font-size: 1.35em;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.tabContainer .tab-layout .tab-contents .content p {
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.8em;
+    letter-spacing: 0.3px;
+}
+
+
+.tabContainer #tab1:checked~.tab-layout nav .tab1 label .indicator,
+.tabContainer #tab2:checked~.tab-layout nav .tab2 label .indicator,
+.tabContainer #tab3:checked~.tab-layout nav .tab3 label .indicator {
+    min-width: 50px;
+    margin: 0 auto;
+    height: 4px;
+    background-color: #003646;
+    border-radius: 2px;
+    transition: all 0.5s ease-in;
+}
+
+.tabContainer #tab1:checked~.tab-layout nav .tab1 label,
+.tabContainer #tab2:checked~.tab-layout nav .tab2 label,
+.tabContainer #tab3:checked~.tab-layout nav .tab3 label {
+    color: #003646;
+    fill: #003646;
+}
+
+.tabContainer .tab-nav ul li label {
+    transition: all 0.5s ease-in;
+}
+
+.tabContainer .tab-nav ul li label:hover {
+    color: #003646;
+    fill: #003646;
+}
+
+.tabContainer .tab-contents .searchContainer .search_input input {
+    border-radius: 1px;
+}
+
+.tabContainer .tab-contents .searchContainer .searchButton {
+    background-color: #003646;
+}
+
+@media (min-width: 600px) {
+
+    .tabContainer .tab-layout .tab-nav ul {
+        justify-content: space-evenly;
+    }
+
+    .tabContainer .tab-layout .tab-nav ul li label .tab-title {
+        font-size: 1.3rem;
+    }
+
+    .tabContainer .tab-layout .tab-nav ul li label svg {
+        height: 4rem;
+    }
+
+    .tabContainer .tab-layout .tab-contents .content .content-heading {
+        font-size: 1.85em;
+        font-weight: 500;
+    }
+}
+
 /*--------------------------------  PAGE BLOCK -  BRANDS AND PARTNERSHIP
  */
 .brandsContainer {
@@ -1603,6 +1738,7 @@ input::-webkit-inner-spin-button {
     color: white;
     margin: 50px 0 0 0;
     padding: 10px;
+    font-size: 0.8rem;
 }
 
 @media only screen and (min-width: 620px) {
