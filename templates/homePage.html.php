@@ -375,10 +375,6 @@
             </div>
         </div>
 
-
-
-
-
         <div class="tabContainer">
             <div class="tab-wrapper">
                 <h3 class="tab-heading sr-only">Dilivery, track your order and return</h3>
@@ -417,13 +413,13 @@
                     </nav>
                     <section class="tab-contents">
                         <article class="tab1 content">
-                            <h2 class="content-heading">Dilivery</h2>
+                            <!-- <h2 class="content-heading">Dilivery</h2> -->
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus itaque quidem minus nostrum, voluptatem accusamus aspernatur quia harum ratione, officia laudantium inventore autem doloribus</p>
 
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quidem aut, odio atque possimus quas ipsam ea sed eveniet, maiores dolorum dolorem recusandae voluptate reiciendis explicabo ipsum obcaecati maxime itaque!</p>
                         </article>
                         <article class="tab2 content">
-                            <h2 class="content-heading">Track My Order</h2>
+                            <!-- <h2 class="content-heading">Track My Order</h2> -->
                             <div class="searchContainer">
                                 <form action="./searchProducts.php" class="search" method="get" id="searchForm">
                                     <div class="search_input">
@@ -437,7 +433,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores provident placeat nulla sed magni officiis, aut voluptates soluta aliquam rerum.</p>
                         </article>
                         <article class="tab3 content">
-                            <h2 class="content-heading">Return</h2>
+                            <!-- <h2 class="content-heading">Return</h2> -->
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis harum dicta, ipsam nostrum excepturi, odit, inventore nisi quis soluta voluptas quibusdam! Hic voluptates asperiores harum consequatur adipisci numquam illo ab. Nulla tempore aspernatur quia qui culpa dolor, consequatur impedit, ipsum, modi laboriosam totam hic eius incidunt amet ullam! Soluta, </p>
                             <p>
                                 repudiandae!em ipsum, dolor sit amet consectetur adipisicing elit. Omnis harum dicta, ipsam nostrum excepturi, odit, am illo ab. Nulla tempore aspernatur quia qui culpa dolor, consequatur impedit, ipsum, modi laboriosam totam hic eius incidunt amet ullam! Soluta, repudiandae
@@ -447,10 +443,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
 
         <div class="brandsContainer siteWrapper">
             <div class="blockHeading">

@@ -43,6 +43,7 @@
                                     </div>
                                 </div>
                                 <!-- end of dropdown -->
+                                <a href="./logout.php"><i class="fa-solid fa-right-from-bracket"></i></a>
                             <?php } else { ?>
                                 <a href="login.php"><i class="fa-solid fa-lock"></i></a>
                             <?php } ?>
@@ -201,7 +202,7 @@
 
                 </nav>
                 <div class="footer__contact--copyright siteWrapper">
-                    <p class="copyright">&copy; Copyright <?= date("Y") ?> Sports Warehouse. All rights reserved. Disclaimer: This website is for demonstration purposes only. No real products or services are sold on this website. Any product listings, prices, or information provided here are purely fictional and intended for demonstration and illustration purposes. Any resemblance to real products, services, or entities is purely coincidental. This website does not engage in any commercial transactions, and any actions performed on this site have no real-world consequences. Thank you for visiting and understanding the nature of this demonstration website.
+                    <p class="copyright">&copy; <?= date("Y") ?> <a href="https://kayawebdesign.com/">Kaya Web Design.</a> Build By Ricky Wu. All rights reserved. Disclaimer: This website is for demonstration purposes only. No real products or services are sold on this website. Any product listings, prices, or information provided here are purely fictional and intended for demonstration and illustration purposes. Any resemblance to real products, services, or entities is purely coincidental. This website does not engage in any commercial transactions, and any actions performed on this site have no real-world consequences. Thank you for visiting and understanding the nature of this demonstration website.
                     </p>
                 </div>
             </div>

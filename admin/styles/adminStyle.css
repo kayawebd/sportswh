@@ -646,6 +646,11 @@ input[type="search"]::-ms-clear {
     background-color: var(--page-header-bgColor);
 }
 
+.table-wrapper,
+.table-responsive {
+    overflow-x: scroll;
+}
+
 table,
 tr,
 td,
@@ -654,6 +659,7 @@ th {
     border: 1px solid #eee;
     text-align: left;
     padding: 5px;
+    max-width: 300px;
 }
 
 table .nowrap {
@@ -665,7 +671,7 @@ table .nowrap {
 }
 
 .table-responsive {
-    max-width: 500px;
+    /* max-width: 500px; */
 
 }
 

@@ -395,3 +395,98 @@ if (document.getElementById("contactForm")) {
   //   document.getElementById("form").submit();
   // }
 }
+if (document.getElementById("createUserForm")) {
+  // const CONTACT_FORM = document.getElementById("contactForm");
+  const NAME_INPUT = document.getElementById("userName");
+  const EMAIL_INPUT = document.getElementById("email");
+  const MESSAGE_INPUT = document.getElementById("message");
+
+  const isRequired = (value) => (value === "" ? false : true);
+  const isBetween = (length, min, max) => length >= min && length <= max;
+  const isEmailValid = (email) =>
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      email
+    );
+
+  const showError = (input, message) => {
+    const FORM_FIELD = input.parentElement.parentElement;
+    FORM_FIELD.classList.remove("success");
+    FORM_FIELD.classList.add("error");
+    const error = FORM_FIELD.querySelector("small");
+    error.textContent = message;
+  };
+
+  const showSuccess = (input) => {
+    const FORM_FIELD = input.parentElement.parentElement;
+    FORM_FIELD.classList.remove("error");
+    FORM_FIELD.classList.add("success");
+    const error = FORM_FIELD.querySelector("small");
+    error.textContent = "";
+  };
+
+  const validateName = () => {
+    const name = NAME_INPUT.value.trim();
+    if (!isRequired(name)) {
+      showError(NAME_INPUT, "Name cannot be blank.");
+      return false;
+    } else if (!isBetween(name.length, 2, 50)) {
+      showError(NAME_INPUT, "Name must be between 2 and 50 characters.");
+      return false;
+    }
+    showSuccess(NAME_INPUT);
+    return true;
+  };
+
+  const validateEmail = () => {
+    const email = EMAIL_INPUT.value.trim();
+    if (!isRequired(email)) {
+      showError(EMAIL_INPUT, "Email cannot be blank.");
+      return false;
+    } else if (!isEmailValid(email)) {
+      showError(EMAIL_INPUT, "Email is not valid.");
+      return false;
+    }
+    showSuccess(EMAIL_INPUT);
+    return true;
+  };
+
+  const validateMessage = () => {
+    const message = MESSAGE_INPUT.value.trim();
+    if (!isRequired(message)) {
+      showError(MESSAGE_INPUT, "Message cannot be blank.");
+      return false;
+    } else if (!isBetween(message.length, 10, 2000)) {
+      showError(
+        MESSAGE_INPUT,
+        "Message must be between 10 and 300 characters."
+      );
+      return false;
+    }
+    showSuccess(MESSAGE_INPUT);
+    return true;
+  };
+
+  // Input event listeners with debounce
+  NAME_INPUT.addEventListener("input", debounce(validateName));
+  EMAIL_INPUT.addEventListener("input", debounce(validateEmail));
+  MESSAGE_INPUT.addEventListener("input", debounce(validateMessage));
+
+  // Debounce function
+  function debounce(func, delay = 1000) {
+    let timeoutId;
+    return function (...args) {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func.apply(null, args);
+      }, delay);
+    };
+  }
+
+  const submitForm = (event) => {
+    event.preventDefault();
+    if (validateForm()) {
+      contactForm.submit();
+    }
+  };
+  contactForm.addEventListener("submit", submitForm);
+}
