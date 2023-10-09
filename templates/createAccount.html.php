@@ -69,9 +69,20 @@
 			</span>
 			<small></small>
 		</div>
-
-		<p class="adminMessage"><?= $message ?></p>
-
+		<!-- display error message -->
+		<div class="adminMessage">
+			<?php
+			if (!empty($createUserErrMessages)) {
+				echo "<p class='adminMessage'><b>User NOT added:</b></p>";
+				foreach ($createUserErrMessages as $createUserErrMessage) {
+			?><p class="adminMessage"><?= $createUserErrMessage ?></p>
+				<?php
+				}
+			} else {
+				?> <p class="adminMessage"><?= $message ?></p>
+			<?php
+			} ?>
+		</div>
 		<div class="form__buttonWrapper">
 			<button type="submit" id="submitButton" class="form__submitButton" name="submit">
 				<span>Create Account</span>
@@ -82,20 +93,7 @@
 			<a href="login.php">Login</a>
 		</div>
 	</form>
-	<!-- display error message -->
-	<div class="adminMessage">
-		<?php
-		if (!empty($createUserErrMessages)) {
-			echo "<p class='adminMessage'><b>User NOT added:</b></p>";
-			foreach ($createUserErrMessages as $createUserErrMessage) {
-		?><p class="adminMessage"><?= $createUserErrMessage ?></p>
-			<?php
-			}
-		} else {
-			?> <p class="adminMessage"><?= $message ?></p>
-		<?php
-		} ?>
-	</div>
+
 </div>
 
 <?php if (isset($error)) : ?>

@@ -41,7 +41,7 @@ if (isset($_POST["submit"])) {
         $createUserErrMessages[] = "The password should be at least " . $minLength . " characters.";
     }
     if ($requiresUppercase && !preg_match('/[A-Z]/', $password)) {
-        $createUserErrMessages[] = "The password shoudl contain at least one uppercase letter.";
+        $createUserErrMessages[] = "The password should contain at least one uppercase letter.";
     }
     if ($requiresLowercase && !preg_match('/[a-z]/', $password)) {
         $createUserErrMessages[] = "The password shoudl contain at least one lowercase letter.";
@@ -60,15 +60,16 @@ if (isset($_POST["submit"])) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $createUserErrMessages[] = "Invalid email address";
     }
-
+    $phone = "";
+    $address = "";
+    $roles = "user";
     if (empty($createUserErrMessages)) {
-        $message = Authentication::createUser($userName, $password, $email);
+        $message = Authentication::createUser($userName, $password, $email, $phone, $address, $roles);
         ob_start();
         include "templates/login.html.php";
         $output = ob_get_clean();
         include "templates/layoutLogin.html.php";
-    } else {
-        $createUserErrMessages[] = "There is a problem creating user.";
+        exit;
     }
 }
 ob_start();

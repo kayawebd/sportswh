@@ -3,7 +3,7 @@ require_once "../classes/Authentication.php";
 if (!isset($_SESSION)) {
     session_start();
 }
-
+Authentication::protectAdmin();
 
 if (!empty($_GET["id"])) {
     require_once "../classes/DBAccess.php";

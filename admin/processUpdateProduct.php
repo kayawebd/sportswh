@@ -4,7 +4,7 @@ require_once "../classes/DBAccess.php";
 require_once "../settings/db.php";
 
 session_start();
-
+Authentication::protectAdmin();
 
 $db = new DBAccess($dsn, $username, $password);
 $pdo = $db->connect();

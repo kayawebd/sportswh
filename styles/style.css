@@ -55,7 +55,8 @@ li {
 /* logo */
 #sw-logo {
     padding-left: 0;
-    min-width: 200px;
+    min-width: 230px;
+    max-height: 50px;
 }
 
 #sw-logo .SW_background {
@@ -154,6 +155,7 @@ li {
     background-color: transparent;
     color: white;
     padding: 0;
+    cursor: pointer;
 }
 
 .menu__items {
@@ -179,8 +181,14 @@ li {
 }
 
 
-.menu .menuBar .fa-solid {
+.menu .menuBar .fa-solid,
+.menu .menuBar svg {
     font-size: 1.7em;
+    fill: white;
+}
+
+.menu .menuBar .menuAccount svg:hover {
+    fill: var(--primary-link-hover-color);
 }
 
 .dropdownMenu {

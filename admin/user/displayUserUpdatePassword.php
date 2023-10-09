@@ -10,10 +10,10 @@ include "../settings/db.php";
 $db = new DBAccess($dsn, $username, $password);
 $pdo = $db->connect();
 
-$title = "Order Items";
+$title = "Update Password";
 $message = "";
 
 ob_start();
-include "templates/displayOrderItems.html.php";
+include "templates/user/displayUserUpdatePassword.html.php";
 $output = ob_get_clean();
-include "templates/layoutUser.html.php";
+include "templates/user/layoutUser.html.php";

@@ -9,6 +9,7 @@
     --page-content-bgColor: #004960;
     --page-content-txtColor: #171616;
     --page-content-blockColor: #fff;
+    --page-menu-active-backgroundcolor: #b3b3b347;
     --white: #fff;
     --black: #333;
     --blue: #00b9eb;
@@ -126,6 +127,10 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+}
+
+.page-header .admin-menu .active {
+    background-color: var(--page-menu-active-backgroundcolor);
 }
 
 .page-header .admin-menu li:nth-last-child(2) {
@@ -833,6 +838,3 @@ table .nowrap {
         width: 50%;
     }
 }
-
-
-/* test table */

@@ -7,4 +7,4 @@
     <p>Address: <?= $_SESSION["address"] ?></p>
     <p>Permission: <?= $_SESSION["roles"] ?></p>
 </div>
-<a href="../admin/displayUpdatePassword.php"><button class="admin__button">Update password</button></a>
+<a href="../admin/displayUserUpdatePassword.php"><button class="admin__button">Update password</button></a>

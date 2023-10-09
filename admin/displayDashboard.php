@@ -3,8 +3,7 @@ require_once "../classes/Authentication.php";
 if (!isset($_SESSION)) {
     session_start();
 }
-// 
-
+Authentication::protectAdmin();
 require_once "../classes/DBAccess.php";
 include "../settings/db.php";
 $db = new DBAccess($dsn, $username, $password);

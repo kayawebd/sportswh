@@ -3,7 +3,7 @@ require_once "../classes/Authentication.php";
 if (!isset($_SESSION)) {
     session_start();
 }
-
+Authentication::protectAdmin();
 
 require_once "../classes/DBAccess.php";
 include "../settings/db.php";
@@ -53,7 +53,7 @@ if (isset($_POST["submitInsert"])) {
     }
     if ($requiresUppercase && !preg_match('/[A-Z]/', $password)) {
         // $isValid = false;
-        $createUserErrMessages[] = "The password shoudl contain at least one uppercase letter.";
+        $createUserErrMessages[] = "The password should contain at least one uppercase letter.";
     }
     if ($requiresLowercase && !preg_match('/[a-z]/', $password)) {
         // $isValid = false;
@@ -77,8 +77,9 @@ if (isset($_POST["submitInsert"])) {
         $createUserErrMessages[] = "Invalid email address";
     }
 
+    $roles = "staff";
     if (empty($createUserErrMessages)) {
-        $message = Authentication::createUser($userName, $password, $email, $phone, $address);
+        $message = Authentication::createUser($userName, $password, $email, $phone, $address, $roles);
     } else {
         // display $createUserErrMessages[] on the page
         ob_start();

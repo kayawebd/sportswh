@@ -40,7 +40,23 @@ To run the Sports Warehouse website locally or deploy it on your web server, fol
     Use local development server like: XAMPP
 
 
-    Enjoy ^
+
+## Editing Database
+Add user details:
+1. Add column in the database example: DOB
+
+2. Add inputs in the createAccount.html.php and displayInsertUser.html.php
+    <div class="inputs">
+        <label class="input-label" for="DOB"></label>
+        <input type="date" id="DOB" name="DOB" placeholder="Date Of Birth">
+        <small></small>
+	</div>
+    
+3. Edit class/Authentication.php  update sql query and add $stmt->bindParam(":DOB", $DOB, PDO::PARAM_STR);
+
+
+
+
 
 
 
