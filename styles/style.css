@@ -2826,6 +2826,11 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     }
 }
 
+.contactPage .thankYouMessage {
+    text-align: center;
+    font-size: 1.3em;
+}
+
 /*---------------------------------- PAGE - PRIVACY POLICY
 */
 .privacyPolicy {

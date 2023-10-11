@@ -153,24 +153,6 @@ if (document.getElementById("slideshow")) {
   });
 }
 
-/*  CONTACT FORM - CHARACTER COUNTER
- –––––––––––––––––––––––––––––––---------------*/
-
-if (document.getElementById("contactPage")) {
-  const textarea = document.getElementById("message");
-  const charCount = document.getElementById("charCount");
-  const maxChars = 2500;
-  textarea.addEventListener("input", function () {
-    const currentChars = textarea.value.length;
-    const remainingChars = maxChars - currentChars;
-    charCount.textContent = `Characters remaining: ${remainingChars}`;
-    if (remainingChars < 0) {
-      textarea.value = textarea.value.slice(0, maxChars);
-      charCount.textContent = "Character limit reached.";
-    }
-  });
-}
-
 /* ABOUT PAGE - DYNAMIC FONT SIZE
  –––––––––––––––––––––––––––––––---------------*/
 if (document.getElementById("aboutPage")) {
@@ -208,11 +190,29 @@ if (PATH_NAME === "about.php") {
   FOOTER.style.backgroundColor = "black";
 }
 
+/*  CONTACT FORM - CHARACTER COUNTER
+ –––––––––––––––––––––––––––––––---------------*/
+
+if (document.getElementById("contactPage")) {
+  const textarea = document.getElementById("message");
+  const charCount = document.getElementById("charCount");
+  const maxChars = 1000;
+  textarea.addEventListener("input", function () {
+    const currentChars = textarea.value.length;
+    const remainingChars = maxChars - currentChars;
+    charCount.textContent = `Characters remaining: ${remainingChars}`;
+    if (remainingChars < 0) {
+      textarea.value = textarea.value.slice(0, maxChars);
+      charCount.textContent = "Character limit reached.";
+    }
+  });
+}
+
 /*  FORM VALIDATION
  –––––––––––––––––––––––––––––––---------------*/
 
-if (document.getElementById("contactForm")) {
-  // const CONTACT_FORM = document.getElementById("contactForm");
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
   const NAME_INPUT = document.getElementById("name");
   const EMAIL_INPUT = document.getElementById("email");
   const MESSAGE_INPUT = document.getElementById("message");
@@ -271,10 +271,10 @@ if (document.getElementById("contactForm")) {
     if (!isRequired(message)) {
       showError(MESSAGE_INPUT, "Message cannot be blank.");
       return false;
-    } else if (!isBetween(message.length, 10, 2000)) {
+    } else if (!isBetween(message.length, 2, 1000)) {
       showError(
         MESSAGE_INPUT,
-        "Message must be between 10 and 300 characters."
+        "Message must be between 2 and 1000 characters."
       );
       return false;
     }
@@ -298,118 +298,46 @@ if (document.getElementById("contactForm")) {
     };
   }
 
+  const validateForm = () => {
+    const isNameValid = validateName();
+    const isEmailValid = validateEmail();
+    const isMessageValid = validateMessage();
+
+    return isNameValid && isEmailValid && isMessageValid;
+  };
+
   const submitForm = (event) => {
-    event.preventDefault();
     if (validateForm()) {
       contactForm.submit();
+    } else {
+      event.preventDefault();
+      console.log("Form not submitted. Please fix the errors.");
     }
   };
   contactForm.addEventListener("submit", submitForm);
 
-  // form.addEventListener("submit", function (e) {
-  //   e.preventDefault();
-  //   let isUsernameValid = checkUsername(),
-  //     isEmailValid = checkEmail(),
-  //     isMessageValid = checkMessage();
-  //   let isFormValid = isUsernameValid && isEmailValid && isMessageValid;
-  //   if (isFormValid) {
-  //     submitTheForm();
-  //   }
-  // });
-  // const debounce = (fn, delay = 1000) => {
-  //   let timeoutId;
-  //   return (...args) => {
-  //     if (timeoutId) {
-  //       clearTimeout(timeoutId);
-  //     }
-  //     timeoutId = setTimeout(() => {
-  //       fn.apply(null, args);
-  //     }, delay);
-  //   };
-  // };
-
-  // if (firstnameEl) {
-  //   var checkFirstName = () => {
-  //     let valid = false;
-  //     const min = 2,
-  //       max = 50;
-  //     const firstname = firstnameEl.value.trim();
-  //     if (!isRequired(firstname)) {
-  //       showError(firstnameEl, "Name cannot be blank.");
-  //     } else if (!isBetween(username.length, min, max)) {
-  //       showError(
-  //         firstnameEl,
-  //         `Name must be between ${min} and ${max} characters.`
-  //       );
-  //     } else {
-  //       showSuccess(firstnameEl);
-  //       valid = true;
-  //     }
-  //     return valid;
-  //   };
-  // }
-
-  // if (passwordEl) {
-  //   var checkPassword = () => {
-  //     let valid = false;
-  //     const password = passwordEl.value.trim();
-  //     if (!isRequired(password)) {
-  //       showError(passwordEl, "Password cannot be blank.");
-  //     } else if (!isPasswordSecure(password)) {
-  //       showError(
-  //         passwordEl,
-  //         "Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number, and 1 special character in (!@#$%^&*)"
-  //       );
-  //     } else {
-  //       showSuccess(passwordEl);
-  //       valid = true;
-  //     }
-  //     return valid;
-  //   };
-  // }
-  // if (confirmPasswordEl) {
-  //   var checkConfirmPassword = () => {
-  //     let valid = false;
-  //     const confirmPassword = confirmPasswordEl.value.trim();
-  //     const password = passwordEl.value.trim();
-  //     if (!isRequired(confirmPassword)) {
-  //       showError(confirmPasswordEl, "Please enter the password again");
-  //     } else if (password !== confirmPassword) {
-  //       showError(confirmPasswordEl, "The password does not match");
-  //     } else {
-  //       showSuccess(confirmPasswordEl);
-  //       valid = true;
-  //     }
-  //     return valid;
-  //   };
-  // }
-
-  // // const isPasswordSecure = (password) => {
-  // //   const re = new RegExp(
-  // //     "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})"
-  // //   );
-  // //   return re.test(password);
-  // // };
-
-  // function submitTheForm() {
-  //   document.getElementById("form").submit();
-  // }
 }
-if (document.getElementById("createUserForm")) {
-  // const CONTACT_FORM = document.getElementById("contactForm");
+
+
+
+
+
+
+const createUserForm = document.getElementById("createUserForm");
+
+if (createUserForm) {
   const NAME_INPUT = document.getElementById("userName");
   const EMAIL_INPUT = document.getElementById("email");
-  const MESSAGE_INPUT = document.getElementById("message");
+  const PASSWORD_INPUT = document.getElementById("password");
+  const CONFIRM_PASSWORD_INPUT = document.getElementById("confirmPassword");
 
-  const isRequired = (value) => (value === "" ? false : true);
-  const isBetween = (length, min, max) => length >= min && length <= max;
+  const isRequired = (value) => value.trim() !== "";
+  const isBetween = (value, min, max) => value.length >= min && value.length <= max;
   const isEmailValid = (email) =>
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-      email
-    );
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 
   const showError = (input, message) => {
-    const FORM_FIELD = input.parentElement.parentElement;
+    const FORM_FIELD = input.parentElement;
     FORM_FIELD.classList.remove("success");
     FORM_FIELD.classList.add("error");
     const error = FORM_FIELD.querySelector("small");
@@ -425,11 +353,11 @@ if (document.getElementById("createUserForm")) {
   };
 
   const validateName = () => {
-    const name = NAME_INPUT.value.trim();
+    const name = NAME_INPUT.value;
     if (!isRequired(name)) {
       showError(NAME_INPUT, "Name cannot be blank.");
       return false;
-    } else if (!isBetween(name.length, 2, 50)) {
+    } else if (!isBetween(name, 2, 50)) {
       showError(NAME_INPUT, "Name must be between 2 and 50 characters.");
       return false;
     }
@@ -438,7 +366,7 @@ if (document.getElementById("createUserForm")) {
   };
 
   const validateEmail = () => {
-    const email = EMAIL_INPUT.value.trim();
+    const email = EMAIL_INPUT.value;
     if (!isRequired(email)) {
       showError(EMAIL_INPUT, "Email cannot be blank.");
       return false;
@@ -450,43 +378,57 @@ if (document.getElementById("createUserForm")) {
     return true;
   };
 
-  const validateMessage = () => {
-    const message = MESSAGE_INPUT.value.trim();
-    if (!isRequired(message)) {
-      showError(MESSAGE_INPUT, "Message cannot be blank.");
+  const isPasswordSecure = (password) => {
+    const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
+    return re.test(password);
+  };
+
+  const validatePassword = () => {
+    const password = PASSWORD_INPUT.value;
+    if (!isRequired(password)) {
+      showError(PASSWORD_INPUT, "Password cannot be blank.");
       return false;
-    } else if (!isBetween(message.length, 10, 2000)) {
+    } else if (!isPasswordSecure(password)) {
       showError(
-        MESSAGE_INPUT,
-        "Message must be between 10 and 300 characters."
+        PASSWORD_INPUT,
+        "Password must have at least 8 characters, including at least 1 lowercase character, 1 uppercase character, 1 number, and 1 special character."
       );
       return false;
     }
-    showSuccess(MESSAGE_INPUT);
+    showSuccess(PASSWORD_INPUT);
     return true;
   };
 
-  // Input event listeners with debounce
-  NAME_INPUT.addEventListener("input", debounce(validateName));
-  EMAIL_INPUT.addEventListener("input", debounce(validateEmail));
-  MESSAGE_INPUT.addEventListener("input", debounce(validateMessage));
+  const validateConfirmPassword = () => {
+    const confirmPassword = CONFIRM_PASSWORD_INPUT.value;
+    const password = PASSWORD_INPUT.value;
+    if (!isRequired(confirmPassword)) {
+      showError(CONFIRM_PASSWORD_INPUT, "Please enter the password again.");
+      return false;
+    } else if (password !== confirmPassword) {
+      showError(CONFIRM_PASSWORD_INPUT, "The passwords do not match.");
+      return false;
+    }
+    showSuccess(CONFIRM_PASSWORD_INPUT);
+    return true;
+  };
 
-  // Debounce function
-  function debounce(func, delay = 1000) {
-    let timeoutId;
-    return function (...args) {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        func.apply(null, args);
-      }, delay);
-    };
-  }
+  const validateForm = () => {
+    const isNameValid = validateName();
+    const isEmailValid = validateEmail();
+    const isPasswordValid = validatePassword();
+    const isConfirmPasswordValid = validateConfirmPassword();
+
+    return isNameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid;
+  };
 
   const submitForm = (event) => {
-    event.preventDefault();
     if (validateForm()) {
-      contactForm.submit();
+      createUserForm.submit();
+    } else {
+      event.preventDefault();
+      console.log("Form not submitted. Please fix the errors.");
     }
   };
-  contactForm.addEventListener("submit", submitForm);
+  createUserForm.addEventListener("submit", submitForm);
 }

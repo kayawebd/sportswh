@@ -53,7 +53,7 @@
                         <div class="inputs">
                             <!-- <label class="input-label" for="message">Message</label> -->
                             <textarea name="message" id="message" cols="20" rows="8" placeholder="Message"></textarea>
-                            <div id="charCount">Characters remaining: 2500</div>
+                            <div id="charCount"></div>
                         </div>
                         <small></small>
                     </div>

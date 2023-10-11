@@ -5,8 +5,9 @@ if (!isset($_SESSION["username"])) {
     session_start();
 }
 
-$title = "Sports Warehouse";
+$title = "Thank You!";
+
 ob_start();
-include "./templates/homePage.html.php";
+include "templates/contactThankYouPage.html.php";
 $output = ob_get_clean();
-include "./templates/layout.html.php";
+include "templates/layout.html.php";
