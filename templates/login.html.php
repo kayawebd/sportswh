@@ -64,8 +64,8 @@
             <a href="createAccount.php">Create account</a>
         </div>
 
-        <p class="orDivider"><span>or</span></p>
-
+        <!-- <p class="orDivider"><span>or</span></p> -->
+<!-- 
         <div class="form__buttonWrapper">
             <button type="submit" class="signinButton">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="1em">
@@ -87,6 +87,6 @@
                 </svg>
                 <span>Sign in with facebook</span>
             </button>
-        </div>
+        </div> -->
     </form>
 </div>
