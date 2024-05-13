@@ -13,7 +13,7 @@
             </a>
         </div>
         <h2 class="form__title">
-            login
+        Testing Account
         </h2>
         <p class="adminMessage"><?= $message ?></p>
 
