@@ -195,4 +195,78 @@ if (isset($_GET["id"])) {
             </div>
         </div>
     </div>
+
+    <div class="shopByCategory">
+        <div class="siteWrapper">
+            <div class="blockHeading">
+                <h2>shop by category</h2>
+            </div>
+            <div class="row">
+                <a href="./productsByCategory.php?id=1" class="column4">
+                    <div class="imgWrapper">
+                        <img src="./assets/images/product-by-category/shoes.webp" alt="category shoes">
+                    </div>
+                    <div class="content">
+                        <span class="title">Shoes</span>
+                    </div>
+                </a>
+                <a href="./productsByCategory.php?id=2" class="column4">
+                    <div class="imgWrapper">
+                        <img src="./assets/images/product-by-category/helmet.webp" alt="category helmet">
+                    </div>
+                    <div class="content">
+                        <span class="title">Helmet</span>
+                    </div>
+                </a>
+                <a href="./productsByCategory.php?id=33" class="column4">
+                    <div class="imgWrapper">
+                        <img src="./assets/images/product-by-category/pants.webp" alt="category pants">
+                    </div>
+                    <div class="content">
+                        <span class="title">Pants</span>
+                    </div>
+                </a>
+                <a href="./productsByCategory.php?id=4" class="column4">
+                    <div class="imgWrapper">
+                        <img src="./assets/images/product-by-category/tops.webp" alt="category tops">
+                    </div>
+                    <div class="content">
+                        <span class="title">Tops</span>
+                    </div>
+                </a>
+                <a href="./productsByCategory.php?id=5" class="column4">
+                    <div class="imgWrapper">
+                        <img src="./assets/images/product-by-category/balls3.webp" alt="category balls">
+                    </div>
+                    <div class="content">
+                        <span class="title">Balls</span>
+                    </div>
+                </a>
+                <a href="./productsByCategory.php?id=6" class="column4">
+                    <div class="imgWrapper">
+                        <img src="./assets/images/product-by-category/equipment.webp" alt="category equipment">
+                    </div>
+                    <div class="content">
+                        <span class="title">Equipment</span>
+                    </div>
+                </a>
+                <a href="./productsByCategory.php?id=7" class="column4">
+                    <div class="imgWrapper">
+                        <img src="./assets/images/product-by-category/trainingGear.webp" alt="">
+                    </div>
+                    <div class="content">
+                        <span class="title">Training Gear</span>
+                    </div>
+                </a>
+                <a href="./productsByCategory.php?id=171" class="column4">
+                    <div class="imgWrapper">
+                        <img src="./assets/images/product-by-category/tech.webp" alt="category tech">
+                    </div>
+                    <div class="content">
+                        <span class="title">Tech</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

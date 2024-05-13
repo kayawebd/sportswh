@@ -97,8 +97,11 @@ li {
     display: flex;
 }
 
+
+
 .menu {
-    padding: 10px;
+    padding: 9px;
+    background-color: var(--primary-bgColor-color);
 }
 
 @media only screen and (min-width: 992px) {
@@ -169,6 +172,10 @@ li {
     margin-right: 20px;
 }
 
+.menu__items.show #sw-logo {
+    max-width: 120px;
+}
+
 .menu__items .menuBar .fa-circle {
     margin-right: 1rem;
     font-size: 0.8em;
@@ -224,7 +231,7 @@ li {
 @media only screen and (min-width: 992px) {
 
     .siteWrapper {
-        max-width: 2000px;
+        max-width: 1600px;
         margin: auto;
     }
 
@@ -239,6 +246,7 @@ li {
         align-items: center;
         flex-direction: row-reverse;
         gap: 10px;
+        padding: 0 5%;
     }
 
     .activePage {
@@ -270,17 +278,27 @@ li {
 }
 
 /* sticky topHeader */
-.sticky {
-    /* position: fixed;
+.topHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    background-color: #fff;
     z-index: 100;
-    top: 0; */
+    transition: top 0.3s;
 }
 
-.sticky+.mainContents {
-    /* this is set to the height of the topHeader
-     This ensures that when the header becomes sticky and no longer occupies space in the document flow, the content below it doesn't abruptly jump up to fill the space left by the header. */
-    /* padding-top: 110px; */
+.siteHeader {
+    height: 91px;
+}
+
+.topHeader.hidden {
+    top: -91px;
+    /* Hide the header when scrolled */
+}
+
+.mainContents {
+    margin-top: 91px;
 }
 
 /* ------------------------------------------   PAGE PARTS - BUTTON
@@ -314,7 +332,7 @@ li {
 /* ------------------------------------------   PAGE PARTS - BREADCRUMB
 */
 .breadcrumb {
-    padding: 10px;
+    padding: 1% 6%;
 }
 
 .breadcrumb .breadcrumb-element {
@@ -348,7 +366,6 @@ li {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 10px;
 }
 
 .searchContainer .search_input {
@@ -448,7 +465,7 @@ li {
 
     .category__items {
         display: flex;
-        padding: 0;
+        padding: 0 5%;
     }
 
     .category__link {
@@ -528,6 +545,14 @@ li {
     font-size: 1.3em;
 }
 
+.banner_freeShipping .content {
+    padding: 1em 0;
+}
+
+.banner_freeShipping .content .bannerFont-medium {
+    margin: 0;
+    font-size: 1.1em;
+}
 
 /*---------------------------------------   PAGE BLOCK - SLIDE SHOW
 */
@@ -657,14 +682,13 @@ li {
 .blockHeading h2 {
     margin: 0;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 /*----------------------------------------  PAGE BLOCK -  FEATURED OFFER 
  */
 .featuredOffer {
     padding: 80px 0;
-    /* background-color: #efefef; */
 }
 
 .featuredOffer .row {
@@ -678,9 +702,7 @@ li {
 
 .featuredOffer .row .column2 .imgWrapper {}
 
-.featuredOffer .row .column2 .content {
-    padding: 0 1em;
-}
+.featuredOffer .row .column2 .content {}
 
 .featuredOffer .row .column2 .content>* {
     margin: 0.6em 0;
@@ -734,7 +756,8 @@ li {
 
 .productsContainer {
     padding: 80px 0;
-    /* background-color: #f4f4f4; */
+    display: flex;
+    justify-content: center;
 }
 
 .productsContainer .products {
@@ -797,6 +820,7 @@ li {
 @media (min-width: 1440px) {
     .productsContainer .products {
         gap: 30px;
+        padding: 0 5%;
     }
 
     .productsContainer .products .item {
@@ -1008,8 +1032,13 @@ li {
 
 /*---------------------------------------- PAGE - PRODUCT DETAILS PAGE
 */
+.productDetails {
+    margin-top: 91px;
+}
+
 .productDetailsContainer {
     background-color: white;
+
 }
 
 .productDetailsContainer .product {}
@@ -1184,10 +1213,13 @@ input::-webkit-inner-spin-button {
 @media (min-width: 800px) {
     .productDetailsContainer .product .item {
         display: flex;
+        justify-content: center;
+        gap: 2%;
+        padding: 0 5%;
     }
 
     .productDetailsContainer .product .item .photo-frame {
-        flex: 0 0 70%;
+        flex: 0 0 60%;
     }
 
     .productDetailsContainer .product .item .content {}
@@ -1266,6 +1298,7 @@ input::-webkit-inner-spin-button {
 .trendingProducts .row {
     display: flex;
     flex-wrap: wrap;
+    padding: 0 5%;
 }
 
 .trendingProducts .row .column3 {
@@ -1362,7 +1395,7 @@ input::-webkit-inner-spin-button {
 }
 
 .shopByCategory .row .column4 .content .title {
-    transition: all 0.5s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .shopByCategory .row .column4:hover .content .title {
@@ -1427,13 +1460,13 @@ input::-webkit-inner-spin-button {
 
 .recommendedProductContainer {
     padding: 80px 0;
-    background-color: #efefef;
 }
 
 .recommendedProductContainer .products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
+    padding: 0 5%;
 }
 
 .recommendedProductContainer .products .item {
@@ -1482,147 +1515,6 @@ input::-webkit-inner-spin-button {
     color: #2d2d2d;
     letter-spacing: .5px;
     padding: 1em;
-}
-
-/*--------------------------------  PAGE BLOCK -  TABS
- */
-
-.tabContainer {
-    padding: 4rem 0;
-}
-
-.tabContainer .tab-wrapper {
-    background-color: white;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    width: 100%;
-    padding: 2em;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.tabContainer .tab-wrapper>input,
-.tabContainer .tab-wrapper .tab-contents .content {
-    display: none;
-}
-
-.tabContainer #tab1:checked~.tab-layout .tab-contents .tab1,
-.tabContainer #tab2:checked~.tab-layout .tab-contents .tab2,
-.tabContainer #tab3:checked~.tab-layout .tab-contents .tab3 {
-    display: block;
-}
-
-.tabContainer .tab-layout {}
-
-.tabContainer .tab-layout .tab-nav {}
-
-.tabContainer .tab-layout .tab-contents {
-    min-height: 400px;
-}
-
-.tabContainer .tab-layout .tab-nav ul {
-    margin: 0;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.tabContainer .tab-layout .tab-nav ul li {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.tabContainer .tab-layout .tab-nav ul li label {
-    cursor: pointer;
-    display: inline-flex;
-    flex-direction: column;
-    gap: 1em;
-    fill: #a4a4a4;
-    color: #a4a4a4;
-}
-
-.tabContainer .tab-layout .tab-nav ul li label .tab-title {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-.tabContainer .tab-layout .tab-nav ul li label svg {
-    height: 2rem;
-}
-
-.tabContainer .tab-layout .tab-contents .content .content-heading {
-    text-align: center;
-    font-size: 1.35em;
-    font-style: normal;
-    font-weight: 400;
-    letter-spacing: 1px;
-}
-
-.tabContainer .tab-layout .tab-contents .content p {
-    width: 100%;
-    font-size: 1.1rem;
-    font-weight: 300;
-    font-style: normal;
-    line-height: 1.8em;
-    letter-spacing: 0.3px;
-}
-
-
-.tabContainer #tab1:checked~.tab-layout nav .tab1 label .indicator,
-.tabContainer #tab2:checked~.tab-layout nav .tab2 label .indicator,
-.tabContainer #tab3:checked~.tab-layout nav .tab3 label .indicator {
-    min-width: 50px;
-    margin: 0 auto;
-    height: 4px;
-    background-color: #003646;
-    border-radius: 2px;
-    transition: all 0.5s ease-in;
-}
-
-.tabContainer #tab1:checked~.tab-layout nav .tab1 label,
-.tabContainer #tab2:checked~.tab-layout nav .tab2 label,
-.tabContainer #tab3:checked~.tab-layout nav .tab3 label {
-    color: #003646;
-    fill: #003646;
-}
-
-.tabContainer .tab-nav ul li label {
-    transition: all 0.5s ease-in;
-}
-
-.tabContainer .tab-nav ul li label:hover {
-    color: #003646;
-    fill: #003646;
-}
-
-.tabContainer .tab-contents .searchContainer .search_input input {
-    border-radius: 1px;
-}
-
-.tabContainer .tab-contents .searchContainer .searchButton {
-    background-color: #003646;
-}
-
-@media (min-width: 600px) {
-
-    .tabContainer .tab-layout .tab-nav ul {
-        justify-content: space-evenly;
-    }
-
-    .tabContainer .tab-layout .tab-nav ul li label .tab-title {
-        font-size: 1.3rem;
-    }
-
-    .tabContainer .tab-layout .tab-nav ul li label svg {
-        height: 2.5em;
-    }
-
-    .tabContainer .tab-layout .tab-contents .content .content-heading {
-        font-size: 1.85em;
-        font-weight: 500;
-    }
 }
 
 /*--------------------------------  PAGE BLOCK -  SLIDER
@@ -1841,7 +1733,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 }
 
 .partners__logos li {
-    transition: opacity 1s ease;
+    transition: opacity .3s ease;
 }
 
 .partners__logos:hover li {
@@ -1895,7 +1787,8 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 }
 
 .footer__link a:is(:hover, :focus) {
-    color: #b8b8b8;
+    color: var(--primary-link-hover-color);
+    ;
 }
 
 .footer__link {
@@ -1913,6 +1806,10 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     height: 6px;
     border-radius: 3px 0 0 3px;
     background: white;
+}
+
+.footer__link:hover::before {
+    background: var(--primary-link-hover-color);
 }
 
 .footerDirectory ul,
@@ -1940,7 +1837,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 }
 
 .footer__contact--socialMedia a:is(:hover) {
-    color: #b8b8b8;
+    color: var(--primary-link-hover-color);
 }
 
 .footer__contact a {}
@@ -1948,17 +1845,18 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 .copyright {
     color: white;
     margin: 50px 0 0 0;
-    padding: 10px;
+    padding: 0 5%;
     font-size: 0.8rem;
 }
 
 @media only screen and (min-width: 620px) {
     .footer {
-        padding: 1em;
+        padding: 0 5%;
     }
 
     .footerContainer {
         text-align: left;
+        padding-top: 2%;
     }
 
     .footer__link {
@@ -2348,7 +2246,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     height: auto;
     object-fit: cover;
     border: .1px solid transparent;
-    transition: border .5s ease;
+    transition: border .3s ease;
 }
 
 .aboutPage .blogs .flexContainers .container .flexItem1 .imgContainer img:hover {
@@ -2360,7 +2258,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 
 .aboutPage .blogs .flexContainers .container .flexItem2 a {
     text-decoration: none;
-    transition: all .5s ease;
+    transition: all .3s ease;
 }
 
 .aboutPage .blogs .flexContainers .container .flexItem2 .title-link:hover {
@@ -2391,7 +2289,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     align-items: center;
     gap: 0.5rem;
     color: rgb(148, 148, 148);
-    transition: all .5s ease;
+    transition: all .3s ease;
 }
 
 .aboutPage .blogs .flexContainers .container .flexItem2 .read-more-link:hover {
@@ -2835,6 +2733,11 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 */
 .privacyPolicy {
     padding: 50px 0;
+    margin-top: 91px;
+}
+
+.privacyPolicy .siteWrapper {
+    max-width: 900px;
 }
 
 .privacyPolicy .pageheading h1 {

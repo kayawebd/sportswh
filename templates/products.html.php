@@ -1,4 +1,8 @@
 <div class="mainContents">
+    <div class="breadcrumb siteWrapper">
+        <a class="breadcrumb-element" href="./index.php">Home</a>
+        <a class="breadcrumb-element" href="./products.php">Products</a>
+    </div>
     <div class="productsContainer">
         <div class="products siteWrapper">
             <?php

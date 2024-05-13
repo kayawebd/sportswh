@@ -432,3 +432,21 @@ if (createUserForm) {
   };
   createUserForm.addEventListener("submit", submitForm);
 }
+
+
+
+
+/*  STICKY HEADER
+ –––––––––––––––––––––––––––––––---------------*/
+
+ let lastScrollTop = 0;
+ window.addEventListener('scroll', function(){
+  const currentScroll = window.scrollY || this.document.documentElement.scrollTop;
+  const header = document.getElementById('topHeader');
+  if (currentScroll > lastScrollTop){
+    header.classList.add('hidden');
+  }else{
+    header.classList.remove('hidden');
+  }
+  lastScrollTop = currentScroll;
+ });
