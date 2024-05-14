@@ -11,10 +11,8 @@ $pdo = $db->connect();
 
 $title = "Process Update Product";
 $message = "";
-// $uploadMessages = [];
 $uploadErrMessages = [];
 
-// Process update
 if (isset($_POST["submitUpdateProduct"])) {
     // Validate required fields
     $itemName = $_POST["itemName"] ?? "";
@@ -45,43 +43,41 @@ if (isset($_POST["submitUpdateProduct"])) {
     $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
     $imagePlaceholder = "imageUnavailable.webp";
 
-    if (empty($photoToUpload)) {
-        $photo = $oldPhoto;
+
+    $photoUploadError = false;
+
+    if (!empty($photoTmpName)) {
+        if (getimagesize($photoTmpName) === false) {
+            $uploadErrMessages[] = "This file is not an image format.";
+            $photoUploadError = true;
+        }
     } else {
-        $photoUploadError = false;
+        $uploadErrMessages[] = "Filename cannot be empty.";
+    }
 
-        if (!empty($photoTmpName)) {
-            if (getimagesize($photoTmpName) === false) {
-                $uploadErrMessages[] = "This file is not an image format.";
-                $photoUploadError = true;
-            }
-        } else {
-            $uploadErrMessages[] = "Filename cannot be empty.";
-        }
+    if (!in_array($imageFileType, ["jpg", "jpeg", "png", "gif", "webp"])) {
+        $uploadErrMessages[] = "Only jpg, jpeg, png, gif, and webp files are allowed.";
+        $photoUploadError = true;
+    }
 
-        if (!in_array($imageFileType, ["jpg", "jpeg", "png", "gif", "webp"])) {
-            $uploadErrMessages[] = "Only jpg, jpeg, png, gif, and webp files are allowed.";
-            $photoUploadError = true;
-        }
+    if ($_FILES["photoToUpload"]["error"] == 1) {
+        $uploadErrMessages[] = "File is too large. Maximum of 40MB is allowed.";
+        $photoUploadError = true;
+    }
+    // Add timestamp at the end of the file to be uploaded if file already exist
+    if (file_exists($targetFile) && $photoToUpload != $imagePlaceholder) {
+        $timestamp = time();
+        $formattedDateTime = date('Y-m-d_H-i-s', $timestamp);
+        $filenameWithoutExtension = pathinfo($photoToUpload, PATHINFO_FILENAME);
+        $fileExtension = pathinfo($photoToUpload, PATHINFO_EXTENSION);
+        $newFileName = $filenameWithoutExtension . "_" . $formattedDateTime . "." . $fileExtension;
+        $targetFile = $targetDirectory . $newFileName;
+        $photoToUpload = $newFileName;
+    }
 
-        if ($_FILES["photoToUpload"]["error"] == 1) {
-            $uploadErrMessages[] = "File is too large. Maximum of 40MB is allowed.";
-            $photoUploadError = true;
-        }
-        // Add timestamp at the end of the file to be uploaded if file already exist
-        if (file_exists($targetFile) && $photoToUpload != $imagePlaceholder) {
-            $timestamp = time();
-            $formattedDateTime = date('Y-m-d_H-i-s', $timestamp);
-            $filenameWithoutExtension = pathinfo($photoToUpload, PATHINFO_FILENAME);
-            $fileExtension = pathinfo($photoToUpload, PATHINFO_EXTENSION);
-            $newFileName = $filenameWithoutExtension . "_" . $formattedDateTime . "." . $fileExtension;
-            $targetFile = $targetDirectory . $newFileName;
-            $photoToUpload = $newFileName;
-        }
-        if (file_exists($targetFile) && $photoToUpload = $imagePlaceholder) {
-            $targetFile = $targetDirectory . $imagePlaceholder;
-            $photoToUpload = $imagePlaceholder;
-        }
+    if (file_exists($targetFile) && $photoToUpload == $imagePlaceholder) {
+        $targetFile = $targetDirectory . $imagePlaceholder;
+        $photoToUpload = $imagePlaceholder;
     }
 } else {
     echo "There is an error submitting the your form.";
@@ -108,7 +104,9 @@ if (empty($uploadErrMessages)) {
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(":itemId", $_POST["itemId"], PDO::PARAM_INT);
         $stmt->bindValue(":itemName", $itemName, PDO::PARAM_STR);
-        $stmt->bindValue(":photo", $photo, PDO::PARAM_STR);
+        if (!empty($photoToUpload)) {
+            $stmt->bindValue(":photo", $photo, PDO::PARAM_STR);
+        }
         $stmt->bindValue(":price", $price, PDO::PARAM_INT);
         $stmt->bindValue(":salePrice", $salePrice, PDO::PARAM_INT);
         $stmt->bindValue(":description", $description, PDO::PARAM_STR);

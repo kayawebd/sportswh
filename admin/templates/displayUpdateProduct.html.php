@@ -63,11 +63,10 @@ if (count($editRows) > 0) {
             }
 
             ?>
-            <p id="sizeInfo">File Size: <?= $fileSizeFormatted ?></p>
-            <p id="sizeInfo">File Location: <?= $filePath ?></p>
+            <!-- <p id="sizeInfo">File Size: <?= $fileSizeFormatted ?></p> -->
+            <!-- <p id="sizeInfo">File Location: <?= $filePath ?></p> -->
             <input type="hidden" name="oldPhoto" value="<?= $editRow["photo"] ?> ">
             </p>
-
             <label for="photoToUpload">Upload Photo:</label>
             <img id="photoToUpload" />
             <input type="file" name="photoToUpload" id="photo" onchange="handleFileSelect(event)">
