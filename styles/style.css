@@ -14,8 +14,10 @@ body {
     --block-bottom-space: 50px;
     --primary-bgColor-color: #002936;
     --secondary-bgColor-color: #ff690c;
+    --darker-orange-color: #d15000;
     --primary-link-hover-color: #ff690c;
     --primary-link-active-color: #ff690c;
+    --black: black;
 }
 
 /* Screen-reader only text */
@@ -27,6 +29,7 @@ body {
     padding: 0;
     border: 0;
 }
+
 
 img,
 picture {
@@ -308,8 +311,9 @@ li {
     border: none;
     border-radius: 8px;
     padding: 12px 55px;
-    color: white;
+    color: var(--black);
     font-size: 1.3rem;
+    font-weight: 900;
     cursor: pointer;
     background-color: var(--secondary-bgColor-color);
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
@@ -377,6 +381,8 @@ li {
 
 }
 
+
+
 .searchContainer .search_input input {
     width: 100%;
     height: 2.5em;
@@ -401,13 +407,13 @@ li {
     border: none;
     border-radius: 50%;
     padding: 10px;
-    background-color: var(--secondary-bgColor-color);
+    background-color: var(--primary-bgColor-color);
     color: white;
     cursor: pointer;
 }
 
 .searchContainer .searchButton:hover {
-    color: #d5d5d5;
+    color: var(--secondary-bgColor-color);
 }
 
 @media only screen and (min-width: 992px) {
@@ -857,7 +863,7 @@ li {
 }
 
 .productsContainer .products .item .link .price-onSale {
-    color: var(--secondary-bgColor-color);
+    color: var(--darker-orange-color);
     font-weight: bold;
 }
 
@@ -1390,7 +1396,7 @@ input::-webkit-inner-spin-button {
 .shopByCategory .row:hover .column4 {
     opacity: 0.5;
     filter: grayscale(1);
-    transition: all 0.5s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .shopByCategory .row .column4:hover {
@@ -1413,7 +1419,7 @@ input::-webkit-inner-spin-button {
     height: 100%;
     width: 100%;
     position: relative;
-    transition: all 0.5s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 @media (min-width: 600px) {
@@ -1451,7 +1457,7 @@ input::-webkit-inner-spin-button {
     margin: 0.3em;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    background-color: #ff690c;
+    background-color: black;
     color: white;
     padding: 0.4em;
     font-size: 1.1em;
@@ -1477,7 +1483,7 @@ input::-webkit-inner-spin-button {
     border-radius: 5px;
     padding: 10px;
     text-align: center;
-    transition: all 0.5s ease;
+    transition: all 0.1s ease;
     background-color: white;
 }
 
@@ -1507,7 +1513,7 @@ input::-webkit-inner-spin-button {
 }
 
 .recommendedProductContainer .products .item .link .price-onSale {
-    color: #ff690c;
+    color: var(--darker-orange-color);
     font-weight: bold;
 }
 

@@ -40,22 +40,13 @@ if (isset($_POST["submitUpdateProduct"])) {
     $targetDirectory = "../assets/images/product-images/";
     $archiveDirectory = "../assets/images/archiveImages/";
     $targetFile = $targetDirectory . $photoToUpload;
-    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
     $imagePlaceholder = "imageUnavailable.webp";
-
+    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+    $allowedImageExtensions = ["jpg", "jpeg", "png", "gif", "webp"];
 
     $photoUploadError = false;
 
-    if (!empty($photoTmpName)) {
-        if (getimagesize($photoTmpName) === false) {
-            $uploadErrMessages[] = "This file is not an image format.";
-            $photoUploadError = true;
-        }
-    } else {
-        $uploadErrMessages[] = "Filename cannot be empty.";
-    }
-
-    if (!in_array($imageFileType, ["jpg", "jpeg", "png", "gif", "webp"])) {
+    if (!empty($photoToUpload) && !in_array($imageFileType, $allowedImageExtensions)) {
         $uploadErrMessages[] = "Only jpg, jpeg, png, gif, and webp files are allowed.";
         $photoUploadError = true;
     }

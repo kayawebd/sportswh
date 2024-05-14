@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop top-quality sports equipment & apparel at Sports Warehouse. Find gear for running, soccer, basketball & more.">
+    <meta name="keywords" content="sports equipment, sports apparel, running gear, soccer gear, basketball gear">
+    <meta name="author" content="KayaWebDesign.com">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#002936">
+    <meta property="og:title" content="Sports Warehouse - Your Source for Quality Sports Equipment">
+    <meta property="og:description" content="Shop top-quality sports equipment & apparel at Sports Warehouse. Find gear for running, soccer, basketball & more.">
+    <meta property="og:image" content="https://kayawebdesign.com/sportswh/assets/images/company-logo/sports-warehouse-logo-600.png">
+    <meta property="og:url" content="https://kayawebdesign.com/sportswh/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sports Warehouse">
     <title><?= $title ?></title>
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
@@ -44,14 +55,14 @@
                                 <!-- end of dropdown -->
                                 <a href="./logout.php"><i class="fa-solid fa-right-from-bracket"></i></a>
                             <?php } else { ?>
-                                <a href="login.php"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                                <a href="login.php" aria-label="go to login"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                                         <path d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z" />
-                                    </svg></a>
+                                    </svg><span class="sr-only">Login</span></a>
                             <?php } ?>
                             <?php
                             $numberOfCartItems = isset($_SESSION["cart"]) ? count($_SESSION["cart"]->getItems()) : null;
                             ?>
-                            <a href="shopping.php" class="menuAccount-shoppingItems"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                            <a href="shopping.php" class="menuAccount-shoppingItems" aria-label="shopping cart"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
                                     <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
                                 </svg> <?= $numberOfCartItems ?></a>
                         </div>
@@ -64,7 +75,7 @@
                                 <input type="text" placeholder="Search products" name="search" id="search" class="search__input">
                                 <i class="fa-solid fa-microphone" id="voiceSearchButton" onclick="startDictation()"></i>
                             </div>
-                            <button type="submit" name="searchButton" value="search" class="searchButton"><i class=" fa-solid fa-magnifying-glass"><span class="sr-only">search</span></i>
+                            <button type="submit" name="searchButton" value="search" class="searchButton" aria-label="Search"><i class=" fa-solid fa-magnifying-glass"><span class="sr-only">search</span></i>
                             </button>
                         </form>
                     </div>
@@ -72,6 +83,7 @@
                         <li>
                             <div class="logo">
                                 <a href="./index.php">
+                                    <span class="sr-only">logo</span>
                                     <svg id="sw-logo" data-name="Sports Warehouse logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 2200 300">
                                         <defs>
                                         </defs>

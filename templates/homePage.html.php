@@ -1,32 +1,6 @@
 <div class="mainContents">
     <h1 class="sr-only">Sports warehouse homepage</h1>
     <div>
-        <div class="banner">
-            <div class="banner_content siteWrapper">
-                <a href="./products.php">
-                    <div class="content">
-                        <h2 class="sr-only">Promotion</h2>
-                        <h3>This is a demonstration website, No real products are sold</h3>
-                        <p class="bannerFont-large">
-                            UP TO <span class="discountPercentage">30%</span> EXTRA OFF OUTLET!
-                        </p>
-                        <p class="bannerFont-large">
-                            ALREADY UP TO <span class="discountPercentage">70%</span> OFF
-                        </p>
-                        <p class="bannerFont-medium">
-                            Discount revealed @ checkout
-                        </p>
-                        <p class="bannerFont-medium bannerHighlight">
-                            Use code: <mark>SPORTS</mark>
-                        </p>
-                        <p class="bannerFont-small">
-                            Outlet items only. See website banner for Ts&amp;Cs. Selected marked products excluded from promo.
-                        </p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
         <div id="slideshow" class="slideshow">
             <div class="slideshow_slides fade">
                 <div class="heroContainer">
@@ -70,6 +44,31 @@
                 <span class="slideshow_indicator-dot" id="dot1"></span>
                 <span class="slideshow_indicator-dot" id="dot2"></span>
                 <span class="slideshow_indicator-dot" id="dot3"></span>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="banner_content siteWrapper">
+                <a href="./products.php">
+                    <div class="content">
+                        <h2 class="sr-only">Promotion</h2>
+                        <h3>This is a demonstration website, No real products are sold</h3>
+                        <p class="bannerFont-large">
+                            UP TO <span class="discountPercentage">30%</span> EXTRA OFF OUTLET!
+                        </p>
+                        <p class="bannerFont-large">
+                            ALREADY UP TO <span class="discountPercentage">70%</span> OFF
+                        </p>
+                        <p class="bannerFont-medium">
+                            Discount revealed @ checkout
+                        </p>
+                        <p class="bannerFont-medium bannerHighlight">
+                            Use code: <mark>SPORTS</mark>
+                        </p>
+                        <p class="bannerFont-small">
+                            Outlet items only. See website banner for Ts&amp;Cs. Selected marked products excluded from promo.
+                        </p>
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -201,9 +200,6 @@
 
         <div class="trendingProducts">
             <div class="siteWrapper">
-                <div class="blockHeading">
-                    <h2>trending products</h2>
-                </div>
                 <div class="row">
                     <div class="column3">
                         <div class="imgWrapper">
@@ -382,22 +378,22 @@
             <div class="partners">
                 <ul class="partners__logos">
                     <li class="logo">
-                        <a href="https://www.nike.com/au/"><img src="./assets/images/partner-logo/addidas.png" class="partners__logo-image" width="80" height="28" alt="nike logo" aria-hidden="true"></a>
+                        <a href="https://www.nike.com/au/"><img src="./assets/images/partner-logo/addidas.png" class="partners__logo-image" width="80" height="28" alt="nike logo" aria-label="nike logo"></a>
                     </li>
                     <li class="logo">
-                        <a href="#"><img src="./assets/images/partner-logo/puma.png" class="partners__logo-image" width="80" height="53" alt="adidas logo" aria-hidden="true"></a>
+                        <a href="#"><img src="./assets/images/partner-logo/puma.png" class="partners__logo-image" width="80" height="53" alt="adidas logo" aria-label="adidas logo"></a>
                     </li>
                     <li class="logo">
-                        <a href="#"> <img src="./assets/images/partner-logo/nike.png" class="partners__logo-image" width="80" height="19" alt="skins logo" aria-hidden="true"></a>
+                        <a href="#"> <img src="./assets/images/partner-logo/nike.png" class="partners__logo-image" width="80" height="19" alt="skins logo" aria-label="skin logo"></a>
                     </li>
                     <li class="logo">
-                        <a href="#"> <img src="./assets/images/partner-logo/reebok.png" class="partners__logo-image" width="80" height="26" alt="asics logo" aria-hidden="true"></a>
+                        <a href="#"> <img src="./assets/images/partner-logo/reebok.png" class="partners__logo-image" width="80" height="26" alt="asics logo" aria-label="asics logo"></a>
                     </li>
                     <li class="logo">
-                        <a href="#"> <img src="./assets/images/partner-logo/asics.png" class="partners__logo-image" width="80" height="43" alt="newbalance logo" aria-hidden="true"></a>
+                        <a href="#"> <img src="./assets/images/partner-logo/asics.png" class="partners__logo-image" width="80" height="43" alt="newbalance logo" aria-label="newbalance logo"></a>
                     </li>
                     <li class="logo">
-                        <a href="#"><img src="./assets/images/partner-logo/under_armour.png" class="partners__logo-image" width="80" height="19" alt="wilson logo" aria-hidden="true"></a>
+                        <a href="#"><img src="./assets/images/partner-logo/under_armour.png" class="partners__logo-image" width="80" height="19" alt="wilson logo" aria-label="wilson logo"></a>
                     </li>
                 </ul>
             </div>
