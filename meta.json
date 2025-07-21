@@ -2,5 +2,6 @@
   "image": "sportswh.webp",
   "title": "Sports Warehouse",
   "description": "A dynamic eCommerce platform offering a seamless shopping experience.",
-  "technologies": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
+  "technologies": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+  "github": "https://github.com/kayawebd/sportswh"
 }
