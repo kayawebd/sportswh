@@ -1,0 +1,1 @@
+[13-May-2024 22:27:19 Australia/Sydney] PHP Warning:  filesize(): stat failed for ../assets/images/product-images/  in /home/kayawebd/public_html/sportswh/admin/templates/displayUpdateProduct.html.php on line 52
